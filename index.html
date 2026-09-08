@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Voa Rio! | Voo Livre no Rio de Janeiro</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: #111;
+        }
+
+        header p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+
+            background:
+                linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+                url("foto-voo.jpg") center/cover;
+        }
+
+        .hero-content {
+            color: white;
+            max-width: 800px;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 24px;
+            border-radius: 30px;
+            background: white;
+            color: #111;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.04);
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .intro {
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            max-width: 750px;
+            margin: auto;
+            color: #555;
+        }
+
+        .modalidades {
+            text-align: center;
+        }
+
+        .modalidades h2 {
+            font-size: 2rem;
+            margin-bottom: 35px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            padding-bottom: 25px;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .asa {
+            background-image: url("foto-asa-delta.jpg");
+        }
+
+        .parapente {
+            background-image: url("foto-parapente.jpg");
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .card .btn {
+            background: #111;
+            color: white;
+        }
+
+        .experiencia {
+            background: white;
+            max-width: none;
+            text-align: center;
+        }
+
+        .experiencia-content {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .experiencia h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .experiencia p {
+            color: #555;
+        }
+
+        .cta {
+            text-align: center;
+            background: #111;
+            color: white;
+            max-width: none;
+        }
+
+        .cta-content {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            margin-bottom: 25px;
+            color: #ddd;
+        }
+
+        footer {
+            background: #000;
+            color: #aaa;
+            text-align: center;
+            padding: 25px 15px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 45px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Voa Rio!</h1>
+        <p>O Rio aos seus pés. O céu à sua frente.</p>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Voe sobre o Rio de Janeiro</h2>
+
+                <p>
+                    Descubra o Rio de uma perspectiva diferente
+                    e viva uma experiência que pode ficar marcada
+                    para toda a vida.
+                </p>
+
+                <a class="btn"
+                   href="https://wa.me/5521975899356?text=Ol%C3%A1!%20Tenho%20interesse%20em%20fazer%20um%20voo%20duplo.%20Gostaria%20de%20saber%20sobre%20disponibilidade.">
+                    Quero voar
+                </a>
+            </div>
+        </section>
+
+
+        <section class="intro">
+            <h2>Uma experiência lá do alto</h2>
+
+            <p>
+                O voo livre permite conhecer o Rio de Janeiro
+                de uma maneira que você dificilmente esquecerá.
+                Escolha como quer viver essa experiência:
+                de asa-delta ou de parapente.
+            </p>
+        </section>
+
+
+        <section class="modalidades">
+
+            <h2>Escolha como você quer voar</h2>
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <div class="card-image asa"></div>
+
+                    <div class="card-content">
+
+                        <h3>🪂 Asa-delta</h3>
+
+                        <p>
+                            Voe deitado e deslize pelo céu
+                            sobre São Conrado.
+                        </p>
+
+                        <a class="btn" href="asa-delta.html">
+                            Conheça a asa-delta
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-image parapente"></div>
+
+                    <div class="card-content">
+
+                        <h3>☁️ Parapente</h3>
+
+                        <p>
+                            Voe sentado e descubra o Rio
+                            de uma perspectiva única.
+                        </p>
+
+                        <a class="btn" href="parapente.html">
+                            Conheça o parapente
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="experiencia">
+
+            <div class="experiencia-content">
+
+                <h2>Do chão ao céu</h2>
+
+                <p>
+                    O encontro acontece na sede do Clube São
+                    Conrado de Voo Livre. De lá, seguimos para
+                    a rampa de decolagem, onde você recebe as
+                    orientações necessárias antes do voo.
+
+                    Durante a experiência, você estará acompanhado
+                    pelo mesmo piloto responsável pelo seu voo,
+                    desde o encontro até o pouso.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="cta">
+
+            <div class="cta-content">
+
+                <h2>Pronto para viver essa experiência?</h2>
+
+                <p>
+                    Entre em contato pelo WhatsApp e conte
+                    quais dias você tem disponíveis.
+                    Vamos verificar as condições e encontrar
+                    o melhor momento para o seu voo.
+                </p>
+
+                <a class="btn"
+                   href="https://wa.me/5521975899356?text=Ol%C3%A1!%20Tenho%20interesse%20em%20fazer%20um%20voo%20duplo.%20Gostaria%20de%20saber%20sobre%20disponibilidade.">
+                    Falar pelo WhatsApp
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Voa Rio! — O Rio aos seus pés. O céu à sua frente.</p>
+        <p>Voo livre em São Conrado, Rio de Janeiro.</p>
+    </footer>
+
+</body>
+  </html>
