@@ -1,746 +1,537 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Voa Rio! | Voo Livre no Rio de Janeiro</title>
-
-    <meta name="description" content="Conheça o voo livre no Rio de Janeiro. Voe de asa-delta ou parapente a partir da Pedra Bonita, sobrevoando São Conrado.">
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f7f9fb;
-            color: #17202a;
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            background: rgba(255,255,255,0.96);
-            backdrop-filter: blur(10px);
-
-            border-bottom: 1px solid #e6e9ed;
-        }
-
-        .nav {
-            max-width: 1150px;
-            margin: auto;
-
-            padding: 16px 22px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: 900;
-            letter-spacing: -1px;
-        }
-
-        .logo span {
-            font-weight: 400;
-        }
-
-        .menu {
-            display: flex;
-            gap: 24px;
-            align-items: center;
-        }
-
-        .menu a {
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .menu .whatsapp {
-            background: #25D366;
-            color: white;
-            padding: 10px 16px;
-            border-radius: 999px;
-        }
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            min-height: 88vh;
-
-            display: flex;
-            align-items: center;
-
-            background:
-                linear-gradient(
-                    rgba(0,0,0,0.25),
-                    rgba(0,0,0,0.50)
-                ),
-                url("foto-voo.jpg") center/cover no-repeat;
-
-            color: white;
-        }
-
-        .hero-content {
-            max-width: 1150px;
-            width: 100%;
-
-            margin: auto;
-            padding: 80px 22px;
-        }
-
-        .hero h1 {
-            font-size: clamp(52px, 10vw, 100px);
-            line-height: 0.95;
-            margin-bottom: 18px;
-            letter-spacing: -4px;
-        }
-
-        .hero h2 {
-            font-size: clamp(20px, 4vw, 34px);
-            font-weight: 400;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            max-width: 600px;
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .button {
-            display: inline-block;
-
-            padding: 14px 22px;
-
-            border-radius: 999px;
-
-            font-weight: 700;
-
-            transition: transform .2s, opacity .2s;
-        }
-
-        .button:hover {
-            transform: translateY(-3px);
-            opacity: .9;
-        }
-
-        .button-main {
-            background: #25D366;
-            color: white;
-        }
-
-        .button-light {
-            background: white;
-            color: #17202a;
-        }
-
-        /* =========================
-           GENERAL
-        ========================= */
-
-        section {
-            padding: 90px 22px;
-        }
-
-        .container {
-            max-width: 1150px;
-            margin: auto;
-        }
-
-        .section-title {
-            font-size: clamp(34px, 6vw, 52px);
-            line-height: 1.05;
-            margin-bottom: 18px;
-            letter-spacing: -1.5px;
-        }
-
-        .section-intro {
-            max-width: 720px;
-            font-size: 18px;
-            color: #58636e;
-            margin-bottom: 45px;
-        }
-
-        /* =========================
-           INTRO
-        ========================= */
-
-        .intro {
-            background: white;
-        }
-
-        .intro-text {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .intro-text p {
-            font-size: 20px;
-            color: #4d5863;
-        }
-
-        /* =========================
-           MODALIDADES
-        ========================= */
-
-        .modalidades {
-            background: #eef3f7;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 24px;
-            overflow: hidden;
-
-            box-shadow: 0 12px 35px rgba(0,0,0,0.08);
-
-            transition: transform .25s, box-shadow .25s;
-        }
-
-        .card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 18px 45px rgba(0,0,0,0.13);
-        }
-
-        .card-image {
-            height: 320px;
-
-            background-position: center;
-            background-size: cover;
-        }
-
-        .asa {
-            background-image: url("foto-asa-delta.jpg");
-        }
-
-        .para {
-            background-image: url("foto-parapente.jpg");
-        }
-
-        .card-content {
-            padding: 30px;
-        }
-
-        .card-content h3 {
-            font-size: 32px;
-            margin-bottom: 12px;
-        }
-
-        .card-content p {
-            color: #58636e;
-            margin-bottom: 22px;
-        }
-
-        .card-link {
-            font-weight: 800;
-        }
-
-        /* =========================
-           VOO LIVRE
-        ========================= */
-
-        .voo-livre {
-            background: white;
-        }
-
-        .voo-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 45px;
-            align-items: center;
-        }
-
-        .voo-text p {
-            margin-bottom: 18px;
-            color: #58636e;
-        }
-
-        .highlight {
-            margin-top: 25px;
-            padding: 25px;
-
-            border-left: 5px solid #17202a;
-
-            background: #f2f5f7;
-
-            border-radius: 10px;
-        }
-
-        /* =========================
-           CURIOSIDADES DO VOO
-        ========================= */
-
-        .curiosidades {
-            background: #17202a;
-            color: white;
-        }
-
-        .curiosidades .section-intro {
-            color: #c8d0d7;
-        }
-
-        .curiosity-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .curiosity {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.12);
-
-            padding: 28px;
-            border-radius: 18px;
-        }
-
-        .curiosity h3 {
-            font-size: 21px;
-            margin-bottom: 10px;
-        }
-
-        .curiosity p {
-            color: #d1d7dc;
-            font-size: 15px;
-        }
-
-        /* =========================
-           CENÁRIO
-        ========================= */
-
-        .cenario {
-            background: white;
-        }
-
-        .location {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-
-            min-height: 330px;
-
-            margin-bottom: 30px;
-
-            background: #f3f6f8;
-
-            border-radius: 25px;
-
-            overflow: hidden;
-        }
-
-        .location-image {
-            background-size: cover;
-            background-position: center;
-            min-height: 300px;
-        }
-
-        .pedra {
-            background-image: url("foto-pedra-bonita.jpg");
-        }
-
-        .rio {
-            background-image: url("foto-rio.jpg");
-        }
-
-        .praia {
-            background-image: url("foto-praia-pepino.jpg");
-        }
-
-        .location-content {
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .location-content h3 {
-            font-size: 30px;
-            margin-bottom: 12px;
-        }
-
-        .location-content p {
-            color: #58636e;
-        }
-
-        /* =========================
-           COMO FUNCIONA
-        ========================= */
-
-        .processo {
-            background: #eef3f7;
-        }
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-
-        .step {
-            background: white;
-            padding: 25px;
-            border-radius: 18px;
-        }
-
-        .number {
-            font-size: 14px;
-            font-weight: 800;
-            margin-bottom: 12px;
-            opacity: .55;
-        }
-
-        .step h3 {
-            margin-bottom: 8px;
-        }
-
-        .step p {
-            color: #58636e;
-            font-size: 15px;
-        }
-
-        .weather {
-            margin-top: 30px;
-
-            background: white;
-
-            padding: 30px;
-
-            border-radius: 20px;
-        }
-
-        .weather h3 {
-            margin-bottom: 10px;
-        }
-
-        .weather p {
-            color: #58636e;
-        }
-
-        /* =========================
-           REGISTROS
-        ========================= */
-
-        .registros {
-            background: white;
-        }
-
-        .record-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 22px;
-        }
-
-        .record {
-            padding: 35px;
-
-            border-radius: 22px;
-
-            background: #f2f5f7;
-        }
-
-        .record h3 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .record p {
-            color: #58636e;
-        }
-
-        /* =========================
-           SEGURANÇA
-        ========================= */
-
-        .seguranca {
-            background: #eef3f7;
-        }
-
-        .security-box {
-            max-width: 850px;
-
-            background: white;
-
-            padding: 40px;
-
-            border-radius: 24px;
-
-            margin: auto;
-        }
-
-        .security-box h3 {
-            font-size: 30px;
-            margin-bottom: 15px;
-        }
-
-        .security-box p {
-            color: #58636e;
-            margin-bottom: 14px;
-        }
-
-        /* =========================
-           FAQ
-        ========================= */
-
-        .faq {
-            background: white;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid #dde2e6;
-        }
-
-        .faq-question {
-            width: 100%;
-
-            background: none;
-            border: none;
-
-            padding: 22px 0;
-
-            text-align: left;
-
-            font-size: 17px;
-            font-weight: 700;
-
-            cursor: pointer;
-
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .faq-answer {
-            display: none;
-
-            padding: 0 0 22px;
-
-            color: #58636e;
-        }
-
-        /* =========================
-           CTA
-        ========================= */
-
-        .cta {
-            background: #17202a;
-            color: white;
-
-            text-align: center;
-        }
-
-        .cta p {
-            max-width: 650px;
-            margin: 0 auto 30px;
-
-            color: #d1d7dc;
-        }
-
-        .cta .buttons {
-            justify-content: center;
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            background: #0e1419;
-            color: white;
-
-            padding: 35px 22px;
-
-            text-align: center;
-        }
-
-        footer p {
-            color: #aab3bb;
-            font-size: 14px;
-        }
-
-        /* =========================
-           WHATSAPP
-        ========================= */
-
-        .floating-whatsapp {
-            position: fixed;
-
-            right: 20px;
-            bottom: 20px;
-
-            z-index: 2000;
-
-            background: #25D366;
-            color: white;
-
-            width: 58px;
-            height: 58px;
-
-            border-radius: 50%;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            font-size: 27px;
-
-            box-shadow: 0 8px 25px rgba(0,0,0,.2);
-        }
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 800px) {
-
-            .menu {
-                display: none;
-            }
-
-            .hero {
-                min-height: 80vh;
-            }
-
-            section {
-                padding: 70px 18px;
-            }
-
-            .cards,
-            .voo-grid,
-            .location,
-            .record-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .curiosity-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .steps {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .location-image {
-                min-height: 250px;
-            }
-
-            .hero h1 {
-                letter-spacing: -2px;
-            }
-        }
-
-        @media (max-width: 520px) {
-
-            .steps {
-                grid-template-columns: 1fr;
-            }
-
-            .card-image {
-                height: 250px;
-            }
-
-            .location-content {
-                padding: 28px;
-            }
-
-            .security-box {
-                padding: 28px;
-            }
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Voa Rio! — Voo Livre no Rio de Janeiro</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f7f7;
+    color: #222;
+    line-height: 1.6;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: #111;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #1687c9;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #1687c9;
+}
+
+.language-select {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px 10px;
+    background: white;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.hero {
+    min-height: 82vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+    background:
+        linear-gradient(rgba(0,0,0,0.38), rgba(0,0,0,0.45)),
+        url("foto-voo.jpg") center/cover no-repeat;
+    color: white;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #55c5ff;
+}
+
+.hero h2 {
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button-primary {
+    background: #1687c9;
+    color: white;
+}
+
+.button-secondary {
+    background: white;
+    color: #1687c9;
+}
+
+section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 80px 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 12px;
+}
+
+.section-title p {
+    max-width: 750px;
+    margin: auto;
+    color: #666;
+}
+
+.intro {
+    text-align: center;
+}
+
+.intro p {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 1.1rem;
+}
+
+.modalities {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.modality-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: 0.25s;
+}
+
+.modality-card:hover {
+    transform: translateY(-5px);
+}
+
+.modality-image {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+
+.hang-gliding {
+    background-image: url("foto-asa-delta.jpg");
+}
+
+.paragliding {
+    background-image: url("foto-parapente.jpg");
+}
+
+.modality-content {
+    padding: 28px;
+}
+
+.modality-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+.modality-content p {
+    color: #555;
+}
+
+.learn-more {
+    display: inline-block;
+    margin-top: 18px;
+    color: #1687c9;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.explanation {
+    background: #111;
+    color: white;
+    max-width: none;
+}
+
+.explanation-inner {
+    max-width: 1000px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.explanation p {
+    margin-top: 20px;
+    font-size: 1.08rem;
+    color: #ddd;
+}
+
+.curiosities {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.curiosity {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+}
+
+.curiosity h3 {
+    margin-bottom: 10px;
+}
+
+.scenario {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.scenario-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+}
+
+.scenario-image {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+}
+
+.pedra {
+    background-image: url("foto-pedra-bonita.jpg");
+}
+
+.rio {
+    background-image: url("foto-rio.jpg");
+}
+
+.pepino {
+    background-image: url("foto-praia-pepino.jpg");
+}
+
+.scenario-content {
+    padding: 22px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.step {
+    background: white;
+    padding: 22px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+}
+
+.step-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1687c9;
+    margin-bottom: 8px;
+}
+
+.media-box {
+    background: #eaf6fc;
+    border-radius: 18px;
+    padding: 40px;
+    text-align: center;
+}
+
+.media-box h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.media-box p {
+    max-width: 750px;
+    margin: auto;
+}
+
+.info-list {
+    max-width: 800px;
+    margin: auto;
+}
+
+.info-item {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
+
+.safety {
+    background: #f0f0f0;
+    max-width: none;
+}
+
+.safety-inner {
+    max-width: 900px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.faq {
+    max-width: 850px;
+    margin: auto;
+}
+
+details {
+    background: white;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    padding: 18px 20px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
+
+summary {
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.final-cta {
+    text-align: center;
+    background: #111;
+    color: white;
+    max-width: none;
+}
+
+.final-cta-inner {
+    max-width: 850px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.final-cta p {
+    color: #ddd;
+    margin: 15px auto 25px;
+}
+
+.whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 14px 18px;
+    border-radius: 50px;
+    font-weight: 800;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+footer {
+    background: #080808;
+    color: #aaa;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+@media (max-width: 850px) {
+
+    nav a {
+        display: none;
+    }
+
+    .modalities,
+    .curiosities,
+    .scenario {
+        grid-template-columns: 1fr;
+    }
+
+    .steps {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .navbar {
+        padding: 12px 15px;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .language-select {
+        font-size: 0.85rem;
+    }
+
+    section {
+        padding: 60px 18px;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .whatsapp {
+        right: 12px;
+        bottom: 12px;
+        padding: 12px 15px;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <header>
+    <div class="navbar">
 
-    <div class="nav">
+        <a href="#" class="logo">Voa <span>Rio!</span></a>
 
-        <a href="#" class="logo">
-            Voa<span>Rio!</span>
-        </a>
+        <nav>
+            <a href="#modalidades" data-i18n="nav_modalities">Modalidades</a>
+            <a href="#como-funciona" data-i18n="nav_how">Como funciona</a>
+            <a href="#faq" data-i18n="nav_faq">FAQ</a>
 
-        <nav class="menu">
-
-            <a href="#modalidades">Voos</a>
-            <a href="#voo-livre">Voo livre</a>
-            <a href="#cenario">O cenário</a>
-            <a href="#faq">Dúvidas</a>
-
-            <a
-                class="whatsapp"
-                href="https://wa.me/5521975899356?text=Ol%C3%A1!%20Tenho%20interesse%20em%20fazer%20um%20voo%20duplo.%20Gostaria%20de%20saber%20sobre%20disponibilidade."
-                target="_blank"
-            >
-                WhatsApp
-            </a>
-
+            <select id="languageSelect" class="language-select" aria-label="Idioma">
+                <option value="pt">🇧🇷 Português</option>
+                <option value="en">🇺🇸 English</option>
+                <option value="es">🇪🇸 Español</option>
+            </select>
         </nav>
 
     </div>
-
 </header>
 
-
-<!-- HERO -->
+<main>
 
 <section class="hero">
 
     <div class="hero-content">
 
-        <h1>Voa Rio!</h1>
+        <h1>Voa <span>Rio!</span></h1>
 
-        <h2>O Rio aos seus pés. O céu à sua frente.</h2>
+        <h2 data-i18n="hero_slogan">
+            O Rio aos seus pés. O céu à sua frente.
+        </h2>
 
-        <p>
-            Descubra o voo livre e conheça o Rio de uma perspectiva completamente diferente.
-            Escolha entre asa-delta e parapente e viva essa experiência acompanhado por um piloto.
+        <p data-i18n="hero_text">
+            Descubra o Rio de Janeiro de um jeito que você nunca imaginou.
+            Conheça o voo livre e viva uma experiência que pode ficar marcada
+            para sempre.
         </p>
 
         <div class="buttons">
 
-            <a href="asa-delta.html" class="button button-main">
-                🦅 Conhecer a asa-delta
+            <a
+                href="https://wa.me/5521975899356"
+                class="button button-primary"
+                id="heroWhatsapp"
+                target="_blank"
+                data-i18n="hero_button"
+            >
+                Quero voar!
             </a>
 
-            <a href="parapente.html" class="button button-light">
-                🪂 Conhecer o parapente
+            <a
+                href="#modalidades"
+                class="button button-secondary"
+                data-i18n="hero_button2"
+            >
+                Conhecer o voo livre
             </a>
 
         </div>
@@ -749,20 +540,18 @@
 
 </section>
 
-
-<!-- INTRO -->
 
 <section class="intro">
 
-    <div class="container intro-text">
+    <div class="section-title">
 
-        <h2 class="section-title">
+        <h2 data-i18n="intro_title">
             O céu do Rio é mais perto do que parece.
         </h2>
 
-        <p>
-            Entre montanhas, mar e cidade, São Conrado abriga um dos cenários mais conhecidos
-            do mundo para a prática do voo livre.
+        <p data-i18n="intro_text">
+            Talvez você nunca tenha imaginado estar voando sobre o Rio de Janeiro.
+            Mas existe uma forma de transformar essa ideia em uma experiência real.
         </p>
 
     </div>
@@ -770,129 +559,346 @@
 </section>
 
 
-<!-- MODALIDADES -->
+<section id="modalidades">
 
-<section class="modalidades" id="modalidades">
+    <div class="section-title">
 
-    <div class="container">
-
-        <h2 class="section-title">
-            Duas formas de conhecer o céu.
+        <h2 data-i18n="modalities_title">
+            Escolha como você quer voar
         </h2>
 
-        <p class="section-intro">
-            Asa-delta e parapente são modalidades diferentes, mas compartilham uma mesma ideia:
-            voar utilizando o comportamento natural do ar, sem motor.
+        <p data-i18n="modalities_subtitle">
+            Duas modalidades, duas formas diferentes de experimentar o céu.
         </p>
-
-
-        <div class="cards">
-
-            <article class="card">
-
-                <div class="card-image asa"></div>
-
-                <div class="card-content">
-
-                    <h3>🦅 Asa-delta</h3>
-
-                    <p>
-                        Uma experiência de voo livre que combina uma aeronave projetada para planar,
-                        o relevo da montanha e as condições do céu para explorar o Rio de uma maneira única.
-                    </p>
-
-                    <a href="asa-delta.html" class="card-link">
-                        Conhecer a asa-delta →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <article class="card">
-
-                <div class="card-image para"></div>
-
-                <div class="card-content">
-
-                    <h3>🪂 Parapente</h3>
-
-                    <p>
-                        Uma maneira diferente de descobrir o céu de São Conrado, aproveitando
-                        as condições naturais do ar para realizar o voo acompanhado por um piloto.
-                    </p>
-
-                    <a href="parapente.html" class="card-link">
-                        Conhecer o parapente →
-                    </a>
-
-                </div>
-
-            </article>
-
-        </div>
 
     </div>
 
-</section>
+    <div class="modalities">
 
+        <article class="modality-card">
 
-<!-- O QUE É VOO LIVRE -->
+            <div class="modality-image hang-gliding"></div>
 
-<section class="voo-livre" id="voo-livre">
+            <div class="modality-content">
 
-    <div class="container voo-grid">
+                <h3 data-i18n="hang_title">🪂 Asa-delta</h3>
 
-        <div>
-
-            <h2 class="section-title">
-                Afinal, o que é voo livre?
-            </h2>
-
-            <div class="voo-text">
-
-                <p>
-                    Voo livre é a prática esportiva de voar utilizando aeronaves sem motor,
-                    aproveitando as condições naturais da atmosfera para realizar e sustentar o voo.
+                <p data-i18n="hang_text">
+                    Voe sobre o Rio em uma asa-delta, acompanhado por um
+                    piloto-instrutor. Uma experiência única, com a cidade,
+                    as montanhas e o mar formando o cenário do voo.
                 </p>
 
-                <p>
-                    Asa-delta e parapente utilizam princípios aerodinâmicos para permanecer no ar,
-                    enquanto o piloto controla a trajetória e aproveita as condições encontradas durante o voo.
-                </p>
-
-                <div class="highlight">
-
-                    <strong>
-                        🦅 E existe uma relação interessante com as aves.
-                    </strong>
-
-                    <p>
-                        Algumas aves conseguem permanecer no ar durante longos períodos sem bater as asas,
-                        aproveitando correntes de ar ascendentes. O voo livre também utiliza o movimento
-                        natural do ar para realizar o voo.
-                    </p>
-
-                </div>
+                <a href="asa-delta.html"
+                   class="learn-more"
+                   data-i18n="learn_hang">
+                    Saiba mais →
+                </a>
 
             </div>
 
+        </article>
+
+
+        <article class="modality-card">
+
+            <div class="modality-image paragliding"></div>
+
+            <div class="modality-content">
+
+                <h3 data-i18n="para_title">🪂 Parapente</h3>
+
+                <p data-i18n="para_text">
+                    Descubra o voo livre de uma forma leve e envolvente.
+                    No parapente, você voa sentado e acompanhado por um
+                    piloto-instrutor durante toda a experiência.
+                </p>
+
+                <a href="parapente.html"
+                   class="learn-more"
+                   data-i18n="learn_para">
+                    Saiba mais →
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<section class="explanation">
+
+    <div class="explanation-inner">
+
+        <div class="section-title">
+
+            <h2 data-i18n="what_title">
+                Afinal, o que é voo livre?
+            </h2>
+
         </div>
 
+        <p data-i18n="what_text1">
+            Voo livre é o nome dado às modalidades de voo que utilizam
+            principalmente as forças naturais do ar para permanecer em voo,
+            sem depender de um motor para a experiência.
+        </p>
 
-        <div>
+        <p data-i18n="what_text2">
+            No voo duplo, você não precisa ter experiência anterior.
+            O piloto-instrutor conduz o voo e orienta você durante cada etapa.
+        </p>
 
-            <h3 style="font-size:32px; margin-bottom:15px;">
-                Como é possível voar sem motor?
+    </div>
+
+</section>
+
+
+<section>
+
+    <div class="section-title">
+
+        <h2 data-i18n="curiosity_title">
+            O voo livre é mais fascinante do que parece
+        </h2>
+
+        <p data-i18n="curiosity_subtitle">
+            Algumas curiosidades que ajudam a entender esse universo.
+        </p>
+
+    </div>
+
+    <div class="curiosities">
+
+        <article class="curiosity">
+
+            <h3 data-i18n="curiosity1_title">
+                🦅 Você sabia?
             </h3>
 
-            <p style="color:#58636e; font-size:18px;">
-                O vento, o relevo, o aquecimento do solo e o comportamento da atmosfera podem produzir
-                movimentos ascendentes de ar. O piloto aprende a interpretar essas condições e utiliza
-                os recursos disponíveis para controlar o voo.
+            <p data-i18n="curiosity1_text">
+                Algumas aves conseguem permanecer no ar por bastante tempo
+                sem bater as asas constantemente, aproveitando os movimentos
+                naturais do ar.
             </p>
 
+        </article>
+
+
+        <article class="curiosity">
+
+            <h3 data-i18n="curiosity2_title">
+                🌬️ O vento faz parte do voo
+            </h3>
+
+            <p data-i18n="curiosity2_text">
+                Direção e intensidade do vento são fundamentais para a
+                segurança e para as condições do voo.
+            </p>
+
+        </article>
+
+
+        <article class="curiosity">
+
+            <h3 data-i18n="curiosity3_title">
+                ☀️ O ar também pode subir
+            </h3>
+
+            <p data-i18n="curiosity3_text">
+                Movimentos ascendentes do ar podem ajudar uma aeronave sem
+                motor a ganhar altitude e permanecer mais tempo no céu.
+            </p>
+
+        </article>
+
+
+        <article class="curiosity">
+
+            <h3 data-i18n="curiosity4_title">
+                🪂 Um voo, dois mundos
+            </h3>
+
+            <p data-i18n="curiosity4_text">
+                Asa-delta e parapente fazem parte do voo livre, mas possuem
+                características e formas de voo diferentes.
+            </p>
+
+        </article>
+
+
+        <article class="curiosity">
+
+            <h3 data-i18n="curiosity5_title">
+                🌎 O voo livre está espalhado pelo mundo
+            </h3>
+
+            <p data-i18n="curiosity5_text">
+                Existem locais de voo livre em diferentes países, cada um
+                aproveitando as características naturais de sua região.
+            </p>
+
+        </article>
+
+
+        <article class="curiosity">
+
+            <h3 data-i18n="curiosity6_title">
+                🏔️ O cenário também faz parte da experiência
+            </h3>
+
+            <p data-i18n="curiosity6_text">
+                No Rio, montanhas, mar e cidade formam um cenário que torna
+                o voo ainda mais especial.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<section>
+
+    <div class="section-title">
+
+        <h2 data-i18n="scenario_title">
+            Do alto da Pedra Bonita ao mar
+        </h2>
+
+        <p data-i18n="scenario_subtitle">
+            O cenário faz parte da experiência.
+        </p>
+
+    </div>
+
+    <div class="scenario">
+
+        <article class="scenario-card">
+
+            <div class="scenario-image pedra"></div>
+
+            <div class="scenario-content">
+
+                <h3 data-i18n="pedra_title">
+                    Pedra Bonita
+                </h3>
+
+                <p data-i18n="pedra_text">
+                    É da Rampa de Voo Livre da Pedra Bonita que começa
+                    a experiência. Um dos pontos mais conhecidos do Rio
+                    para a prática do voo livre.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="scenario-card">
+
+            <div class="scenario-image rio"></div>
+
+            <div class="scenario-content">
+
+                <h3 data-i18n="sao_title">
+                    São Conrado
+                </h3>
+
+                <p data-i18n="sao_text">
+                    Durante o voo, você sobrevoará São Conrado e poderá
+                    contemplar a paisagem formada pela montanha, pelo mar
+                    e pela cidade.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="scenario-card">
+
+            <div class="scenario-image pepino"></div>
+
+            <div class="scenario-content">
+
+                <h3 data-i18n="pepino_title">
+                    Praia do Pepino
+                </h3>
+
+                <p data-i18n="pepino_text">
+                    A Praia do Pepino é o ponto oficial de chegada da
+                    experiência e onde está localizada a sede do Clube
+                    São Conrado de Voo Livre.
+                </p>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<section id="como-funciona">
+
+    <div class="section-title">
+
+        <h2 data-i18n="process_title">
+            Como funciona?
+        </h2>
+
+        <p data-i18n="process_subtitle">
+            Do primeiro contato até o momento de pousar.
+        </p>
+
+    </div>
+
+    <div class="steps">
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <h3 data-i18n="step1_title">WhatsApp</h3>
+            <p data-i18n="step1_text">
+                Você entra em contato e informa os dias em que pode voar.
+            </p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <h3 data-i18n="step2_title">Condições</h3>
+            <p data-i18n="step2_text">
+                Verificamos a previsão e as condições de vento.
+            </p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">3</div>
+            <h3 data-i18n="step3_title">Agendamento</h3>
+            <p data-i18n="step3_text">
+                Indicamos os melhores dias e horários para o voo.
+            </p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">4</div>
+            <h3 data-i18n="step4_title">Preparação</h3>
+            <p data-i18n="step4_text">
+                No dia, você recebe as orientações e o equipamento é preparado.
+            </p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">5</div>
+            <h3 data-i18n="step5_title">Voo</h3>
+            <p data-i18n="step5_text">
+                É hora de decolar e aproveitar a experiência.
+            </p>
         </div>
 
     </div>
@@ -900,43 +906,83 @@
 </section>
 
 
-<!-- CURIOSIDADES -->
+<section>
 
-<section class="curiosidades">
+    <div class="media-box">
 
-    <div class="container">
+        <h3 data-i18n="media_title">
+            Leve o voo com você 🎥
+        </h3>
 
-        <h2 class="section-title">
-            O voo livre é mais fascinante do que parece.
-        </h2>
+        <p data-i18n="media_text">
+            Durante a experiência, podem ser utilizadas câmeras GoPro e
+            câmeras 360°. Dependendo da modalidade e da configuração,
+            as câmeras são posicionadas no equipamento para registrar
+            momentos do voo.
 
-        <p class="section-intro">
-            Algumas coisas que fazem parte desse esporte são muito mais interessantes do que parecem
-            quando vistas de baixo.
+            Depois, você pode escolher quais gravações deseja receber,
+            diretamente no seu celular ou em outro local de sua preferência.
         </p>
 
+    </div>
 
-        <div class="curiosity-grid">
-
-            <article class="curiosity">
-
-                <h3>🦅 Aves também aproveitam o ar</h3>
-
-                <p>
-                    Algumas aves planadoras utilizam correntes ascendentes para ganhar ou manter altitude
-                    sem precisar bater as asas continuamente.
-                </p>
-
-            </article>
+</section>
 
 
-            <article class="curiosity">
+<section>
 
-                <h3>🏔️ A montanha ajuda a criar condições de voo</h3>
+    <div class="section-title">
 
-                <p>
-                    Quando o vento encontra uma encosta, ele pode ser desviado para cima,
-                    criando correntes que podem ser aproveitadas pelo voo livre.
-                </p>
+        <h2 data-i18n="before_title">
+            Antes de decolar
+        </h2>
 
-  
+        <p data-i18n="before_subtitle">
+            Você não precisa saber voar. Mas existem algumas coisas importantes
+            para saber antes da experiência.
+        </p>
+
+    </div>
+
+    <div class="info-list">
+
+        <div class="info-item" data-i18n="info1">
+            👟 Dê preferência a calçados fechados. Sandálias ou chinelos
+            precisam estar devidamente presos.
+        </div>
+
+        <div class="info-item" data-i18n="info2">
+            🎒 Pequenos objetos podem ser levados em um compartimento do
+            equipamento. Mochilas e objetos maiores são transportados pelo
+            profissional de resgate.
+        </div>
+
+        <div class="info-item" data-i18n="info3">
+            👨‍👩‍👦 A partir dos 18 anos, o voo é autorizado para adultos.
+            Menores a partir dos 14 anos podem voar com pai, mãe ou responsável
+            legal presente no registro.
+        </div>
+
+        <div class="info-item" data-i18n="info4">
+            🧑‍✈️ O mesmo piloto acompanha você durante a experiência,
+            desde o registro até o pouso.
+        </div>
+
+        <div class="info-item" data-i18n="info5">
+            📍 O ponto de encontro será informado pelo WhatsApp.
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="safety">
+
+    <div class="safety-inner">
+
+        <div class="section-title">
+
+            <h2 data-i18n="safety_title">
+                Segurança vem antes do voo
+            </h2
