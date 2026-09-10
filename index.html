@@ -338,7 +338,265 @@
         </section>
 
 
-        <!-- A próxima parte será adicionada aqui -->
+                <!-- ==============================
+             MODALIDADES
+        ============================== -->
+
+        <section class="modalidades" id="modalidades">
+
+            <div class="modalidades-introducao">
+
+                <p class="rotulo">
+                    Escolha como conhecer o céu
+                </p>
+
+                <h2>
+                    Duas formas de viver o voo livre.
+                </h2>
+
+                <p>
+                    Cada modalidade tem suas próprias características.
+                    Escolha a que mais combina com a experiência que você
+                    deseja viver.
+                </p>
+
+            </div>
+
+
+            <div class="modalidades-grid">
+
+
+                <!-- ASA-DELTA -->
+
+                <article class="modalidade-card modalidade-destaque">
+
+                    <div class="modalidade-imagem">
+
+                        <img
+                            src="asa-delta.jpg"
+                            alt="Voo duplo de asa-delta sobre o Rio de Janeiro"
+                        >
+
+                    </div>
+
+                    <div class="modalidade-conteudo">
+
+                        <p class="modalidade-tipo">
+                            Asa-delta
+                        </p>
+
+                        <h3>
+                            O Rio visto do alto, em voo livre.
+                        </h3>
+
+                        <p>
+                            A partir da Pedra Bonita, você parte para um
+                            voo duplo acompanhado por um piloto-instrutor,
+                            com São Conrado aos seus pés e o litoral do
+                            Rio de Janeiro como cenário.
+                        </p>
+
+                        <a
+                            href="#asa-delta"
+                            class="modalidade-link"
+                        >
+                            Saiba mais →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PARAPENTE -->
+
+                <article class="modalidade-card">
+
+                    <div class="modalidade-imagem">
+
+                        <img
+                            src="parapente.jpg"
+                            alt="Voo duplo de parapente sobre o Rio de Janeiro"
+                        >
+
+                    </div>
+
+                    <div class="modalidade-conteudo">
+
+                        <p class="modalidade-tipo">
+                            Parapente
+                        </p>
+
+                        <h3>
+                            Uma outra forma de partir da Pedra Bonita.
+                        </h3>
+
+                        <p>
+                            No voo duplo de parapente, você decola da
+                            Pedra Bonita acompanhado por um piloto-instrutor
+                            e conhece o Rio a partir de uma perspectiva
+                            completamente diferente.
+                        </p>
+
+                        <a
+                            href="#parapente"
+                            class="modalidade-link"
+                        >
+                            Saiba mais →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==============================
+             ESTILO DAS MODALIDADES
+        ============================== -->
+
+        <style>
+
+            .modalidades {
+                padding: 90px 20px;
+                background: #ffffff;
+            }
+
+            .modalidades-introducao {
+                width: 100%;
+                max-width: 760px;
+                margin: 0 auto 55px;
+            }
+
+            .modalidades-introducao h2 {
+                font-size: clamp(34px, 8vw, 60px);
+                line-height: 1.05;
+                letter-spacing: -2px;
+                margin-bottom: 22px;
+            }
+
+            .modalidades-introducao > p:last-child {
+                max-width: 650px;
+                color: #5c6670;
+                font-size: 18px;
+                line-height: 1.7;
+            }
+
+
+            .modalidades-grid {
+                width: 100%;
+                max-width: 1180px;
+                margin: 0 auto;
+
+                display: grid;
+                gap: 25px;
+            }
+
+
+            .modalidade-card {
+                overflow: hidden;
+
+                background: #f2f3f1;
+
+                border-radius: 22px;
+            }
+
+
+            .modalidade-imagem {
+                width: 100%;
+                aspect-ratio: 4 / 3;
+                overflow: hidden;
+            }
+
+            .modalidade-imagem img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+
+            .modalidade-conteudo {
+                padding: 30px 25px 32px;
+            }
+
+            .modalidade-tipo {
+                margin-bottom: 10px;
+
+                color: #66727c;
+
+                font-size: 12px;
+                font-weight: 700;
+
+                letter-spacing: 1.8px;
+                text-transform: uppercase;
+            }
+
+            .modalidade-conteudo h3 {
+                max-width: 550px;
+
+                font-size: clamp(28px, 7vw, 42px);
+                line-height: 1.08;
+                letter-spacing: -1px;
+
+                margin-bottom: 18px;
+            }
+
+            .modalidade-conteudo > p:not(.modalidade-tipo) {
+                max-width: 570px;
+
+                color: #59636c;
+
+                font-size: 16px;
+                line-height: 1.7;
+
+                margin-bottom: 25px;
+            }
+
+
+            .modalidade-link {
+                display: inline-flex;
+                align-items: center;
+
+                font-size: 15px;
+                font-weight: 700;
+
+                border-bottom: 1px solid currentColor;
+                padding-bottom: 3px;
+            }
+
+
+            @media (min-width: 768px) {
+
+                .modalidades {
+                    padding: 130px 35px;
+                }
+
+                .modalidades-grid {
+                    grid-template-columns: 1.15fr 0.85fr;
+                    align-items: stretch;
+                }
+
+                .modalidade-destaque {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .modalidade-destaque .modalidade-imagem {
+                    aspect-ratio: 16 / 9;
+                }
+
+                .modalidade-card:not(.modalidade-destaque) {
+                    margin-top: 80px;
+                }
+
+            }
+
+        </style>
 
     </main>
 
