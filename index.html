@@ -2185,35 +2185,283 @@
     content: "+";
     position: absolute;
     right: 4px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #c9a15a;
-    font-size: 1.6rem;
-    font-weight: 300;
-  }
+    top: 50%;   
 
-  .faq-resposta {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease;
-  }
+ <!-- BLOCO 10 — PERGUNTAS FREQUENTES -->
+<section class="faq" id="faq">
+    <div class="faq-conteudo">
 
-  .faq-resposta p {
-    margin: 0;
-    padding: 0 35px 25px 0;
-    color: rgba(255, 255, 255, 0.68);
-    font-size: 0.95rem;
-    line-height: 1.75;
-  }
+        <p class="secao-etiqueta">Perguntas frequentes</p>
 
-  .faq-item.aberto .faq-resposta {
-    max-height: 300px;
-  }
+        <h2>Algumas respostas antes do seu voo.</h2>
 
-  .faq-item.aberto .faq-pergunta::after {
-    content: "−";
-  }
+        <div class="faq-lista">
 
+            <div class="faq-item">
+                <button class="faq-pergunta" type="button">
+                    <span>Como é definido o piloto que realizará meu voo?</span>
+                    <span class="faq-icone">+</span>
+                </button>
+
+                <div class="faq-resposta">
+                    <p>
+                        A definição do piloto é feita de acordo com a disponibilidade
+                        para a data e o horário escolhidos.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-pergunta" type="button">
+                    <span>Onde será realizado o pouso?</span>
+                    <span class="faq-icone">+</span>
+                </button>
+
+                <div class="faq-resposta">
+                    <p>
+                        O pouso tem como local oficial a Praia do Pepino.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-pergunta" type="button">
+                    <span>Posso realizar o voo sem estar acompanhado?</span>
+                    <span class="faq-icone">+</span>
+                </button>
+
+                <div class="faq-resposta">
+                    <p>
+                        Sim. O voo duplo é realizado exclusivamente pelo piloto
+                        e pelo passageiro.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-pergunta" type="button">
+                    <span>Posso levar alguém comigo no dia do voo?</span>
+                    <span class="faq-icone">+</span>
+                </button>
+
+                <div class="faq-resposta">
+                    <p>
+                        Sim. A pessoa que estiver acompanhando você poderá seguir
+                        até a rampa de voo livre. Após a decolagem, poderá retornar
+                        acompanhada por um integrante da equipe.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-pergunta" type="button">
+                    <span>Quando o pagamento é realizado?</span>
+                    <span class="faq-icone">+</span>
+                </button>
+
+                <div class="faq-resposta">
+                    <p>
+                        O pagamento é realizado após o voo.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-pergunta" type="button">
+                    <span>Quais formas de pagamento são aceitas?</span>
+                    <span class="faq-icone">+</span>
+                </button>
+
+                <div class="faq-resposta">
+                    <p>
+                        São aceitos pagamentos por Pix, dinheiro ou cartão
+                        de crédito e débito.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-pergunta" type="button">
+                    <span>As gravações são entregues no mesmo dia?</span>
+                    <span class="faq-icone">+</span>
+                </button>
+
+                <div class="faq-resposta">
+                    <p>
+                        Sim. Pouco depois do pouso, as gravações disponíveis
+                        são apresentadas para que você possa assisti-las
+                        e escolher quais deseja levar.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-pergunta" type="button">
+                    <span>Posso realizar o voo em uma data comemorativa ou ocasião especial?</span>
+                    <span class="faq-icone">+</span>
+                </button>
+
+                <div class="faq-resposta">
+                    <p>
+                        Sim. O voo pode ser realizado em qualquer dia em que
+                        as condições sejam favoráveis à prática do esporte.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-pergunta" type="button">
+                    <span>Preciso morar no Rio de Janeiro para realizar o voo?</span>
+                    <span class="faq-icone">+</span>
+                </button>
+
+                <div class="faq-resposta">
+                    <p>
+                        Não. O Voa Rio! recebe pessoas de outras cidades,
+                        estados e também de outros países.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    .faq {
+        padding: 100px 20px;
+        background: #f5f3ee;
+    }
+
+    .faq-conteudo {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .faq .secao-etiqueta {
+        margin-bottom: 14px;
+        font-size: 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 600;
+        opacity: 0.65;
+    }
+
+    .faq h2 {
+        margin: 0 0 50px;
+        font-size: clamp(32px, 6vw, 52px);
+        line-height: 1.08;
+        font-weight: 500;
+        letter-spacing: -1.5px;
+    }
+
+    .faq-lista {
+        border-top: 1px solid rgba(17, 17, 17, 0.18);
+    }
+
+    .faq-item {
+        border-bottom: 1px solid rgba(17, 17, 17, 0.18);
+    }
+
+    .faq-pergunta {
+        width: 100%;
+        padding: 25px 4px;
+        border: 0;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        text-align: left;
+        font: inherit;
+        font-size: 18px;
+        line-height: 1.4;
+        color: #111;
+        cursor: pointer;
+    }
+
+    .faq-pergunta span:first-child {
+        max-width: 800px;
+    }
+
+    .faq-icone {
+        flex-shrink: 0;
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+        font-weight: 300;
+        transition: transform 0.3s ease;
+    }
+
+    .faq-item.aberto .faq-icone {
+        transform: rotate(45deg);
+    }
+
+    .faq-resposta {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition:
+            max-height 0.4s ease,
+            opacity 0.3s ease,
+            padding 0.4s ease;
+    }
+
+    .faq-resposta p {
+        max-width: 760px;
+        margin: 0;
+        padding: 0 45px 0 4px;
+        font-size: 16px;
+        line-height: 1.7;
+        color: rgba(17, 17, 17, 0.72);
+    }
+
+    .faq-item.aberto .faq-resposta {
+        max-height: 300px;
+        opacity: 1;
+        padding-bottom: 26px;
+    }
+
+    @media (max-width: 600px) {
+        .faq {
+            padding: 75px 20px;
+        }
+
+        .faq h2 {
+            margin-bottom: 35px;
+        }
+
+        .faq-pergunta {
+            padding: 22px 0;
+            font-size: 17px;
+        }
+
+        .faq-resposta p {
+            padding-left: 0;
+            padding-right: 25px;
+            font-size: 15px;
+        }
+    }
+</style>
+
+<script>
+    document.querySelectorAll('.faq-pergunta').forEach(pergunta => {
+        pergunta.addEventListener('click', () => {
+            const item = pergunta.closest('.faq-item');
+
+            document.querySelectorAll('.faq-item').forEach(outroItem => {
+                if (outroItem !== item) {
+                    outroItem.classList.remove('aberto');
+                }
+            });
+
+            item.classList.toggle('aberto');
+        });
+    });
+</script>
 
   /* BLOCO 11 — CHAMADA FINAL */
 
