@@ -759,7 +759,175 @@
 
     </main>
 
+<!-- BLOCO 3 — UMA NOVA PERSPECTIVA -->
 
+<style>
+  .perspectiva {
+    position: relative;
+    background: #111;
+    color: #fff;
+    overflow: hidden;
+    padding: 0 0 110px;
+  }
+
+  .perspectiva-imagem {
+    position: relative;
+    width: 100%;
+    height: 78vh;
+    min-height: 600px;
+    overflow: hidden;
+  }
+
+  .perspectiva-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: scale(1.02);
+  }
+
+  .perspectiva-imagem::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.02) 20%,
+        rgba(0, 0, 0, 0.08) 45%,
+        rgba(0, 0, 0, 0.75) 100%
+      );
+  }
+
+  .perspectiva-conteudo {
+    position: relative;
+    z-index: 2;
+    width: calc(100% - 32px);
+    max-width: 1050px;
+    margin: -120px auto 0;
+    padding: 48px 28px 55px;
+    background: #f4f1eb;
+    color: #151515;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.28);
+  }
+
+  .perspectiva-linha {
+    width: 55px;
+    height: 3px;
+    margin-bottom: 25px;
+    background: #b18a4a;
+  }
+
+  .perspectiva-rotulo {
+    display: block;
+    margin-bottom: 20px;
+    color: #9b7a3d;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  .perspectiva-titulo {
+    margin: 0 0 30px;
+    max-width: 900px;
+    font-size: clamp(3rem, 12vw, 7rem);
+    line-height: 0.92;
+    letter-spacing: -0.055em;
+    font-weight: 600;
+  }
+
+  .perspectiva-texto {
+    max-width: 720px;
+    margin: 0 0 20px;
+    color: #4b4b4b;
+    font-size: 1.08rem;
+    line-height: 1.85;
+  }
+
+  .perspectiva-destaque {
+    max-width: 700px;
+    margin: 42px 0 0;
+    padding-top: 30px;
+    border-top: 1px solid #d8d2c7;
+    color: #151515;
+    font-size: 1.3rem;
+    line-height: 1.55;
+    font-weight: 600;
+  }
+
+  @media (min-width: 800px) {
+
+    .perspectiva {
+      padding-bottom: 150px;
+    }
+
+    .perspectiva-imagem {
+      height: 88vh;
+      min-height: 720px;
+    }
+
+    .perspectiva-conteudo {
+      width: calc(100% - 80px);
+      margin-top: -160px;
+      padding: 75px 80px 80px;
+    }
+
+    .perspectiva-titulo {
+      margin-bottom: 38px;
+    }
+
+    .perspectiva-texto {
+      font-size: 1.12rem;
+    }
+
+    .perspectiva-destaque {
+      font-size: 1.45rem;
+    }
+  }
+</style>
+
+<section class="perspectiva" id="perspectiva">
+
+  <div class="perspectiva-imagem">
+
+    <img
+      src="perspectiva.jpg"
+      alt="Vista do Rio de Janeiro a partir da Pedra Bonita"
+    >
+
+  </div>
+
+  <div class="perspectiva-conteudo">
+
+    <div class="perspectiva-linha"></div>
+
+    <span class="perspectiva-rotulo">
+      Uma nova perspectiva
+    </span>
+
+    <h2 class="perspectiva-titulo">
+      Você já imaginou ver o Rio assim?
+    </h2>
+
+    <p class="perspectiva-texto">
+      Da Pedra Bonita, montanhas, mar e cidade formam uma paisagem
+      que ganha outra dimensão vista do alto.
+    </p>
+
+    <p class="perspectiva-texto">
+      O voo segue em direção a São Conrado, revelando o Rio por
+      um ponto de vista que não existe no chão.
+    </p>
+
+    <p class="perspectiva-destaque">
+      Talvez o seu próximo ponto de vista seja o céu.
+    </p>
+
+  </div>
+
+</section>
+    
 </body>
 
 </html>
