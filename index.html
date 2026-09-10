@@ -1389,6 +1389,138 @@
   </div>
 
 </section>
+
+    <!-- BLOCO 6 — O CÉU TAMBÉM DECIDE -->
+
+<style>
+  .ceu {
+    position: relative;
+    min-height: 720px;
+    padding: 120px 20px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: #111;
+    color: #fff;
+  }
+
+  .ceu-imagem {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ceu::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.82) 0%,
+        rgba(0, 0, 0, 0.48) 45%,
+        rgba(0, 0, 0, 0.08) 100%
+      );
+  }
+
+  .ceu-conteudo {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .ceu-rotulo {
+    display: block;
+    margin-bottom: 20px;
+    color: #c9a15a;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  .ceu-titulo {
+    max-width: 750px;
+    margin: 0;
+    font-size: clamp(3rem, 11vw, 6.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.055em;
+    font-weight: 600;
+  }
+
+  .ceu-texto {
+    max-width: 650px;
+    margin: 32px 0 0;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .ceu-destaque {
+    max-width: 650px;
+    margin: 28px 0 0;
+    padding-left: 20px;
+    border-left: 2px solid #c9a15a;
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    font-weight: 500;
+  }
+
+  @media (min-width: 800px) {
+
+    .ceu {
+      min-height: 820px;
+      padding: 150px 60px;
+    }
+
+    .ceu-texto {
+      font-size: 1.1rem;
+    }
+
+    .ceu-destaque {
+      font-size: 1.2rem;
+    }
+
+  }
+</style>
+
+<section class="ceu" id="ceu">
+
+  <img
+    class="ceu-imagem"
+    src="ceu.jpg"
+    alt="Vista do céu sobre o Rio de Janeiro"
+  >
+
+  <div class="ceu-conteudo">
+
+    <span class="ceu-rotulo">
+      O céu também decide
+    </span>
+
+    <h2 class="ceu-titulo">
+      Nem todo dia é dia de voar.
+    </h2>
+
+    <p class="ceu-texto">
+      O voo livre depende das condições de tempo e vento.
+      Por isso, a equipe acompanha a previsão e as condições
+      do local para orientar você sobre o melhor momento para voar.
+    </p>
+
+    <p class="ceu-destaque">
+      Se as condições não estiverem adequadas, a decolagem não é autorizada.
+      Nesse caso, o voo pode ser reagendado para outro momento.
+    </p>
+
+  </div>
+
+</section>
     
 </body>
 
