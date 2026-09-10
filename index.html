@@ -1117,6 +1117,278 @@
   </div>
 
 </section>
+
+<!-- BLOCO 5 — COMO FUNCIONA -->
+
+<style>
+  .processo {
+    background: #f4f1eb;
+    color: #151515;
+    padding: 100px 20px 120px;
+    overflow: hidden;
+  }
+
+  .processo-conteudo {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .processo-topo {
+    max-width: 800px;
+    margin-bottom: 70px;
+  }
+
+  .processo-rotulo {
+    display: block;
+    margin-bottom: 20px;
+    color: #9b7a3d;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  .processo-titulo {
+    margin: 0;
+    font-size: clamp(3rem, 11vw, 6.2rem);
+    line-height: 0.93;
+    letter-spacing: -0.055em;
+    font-weight: 600;
+  }
+
+  .processo-introducao {
+    max-width: 650px;
+    margin: 28px 0 0;
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .processo-lista {
+    position: relative;
+    max-width: 850px;
+    margin: 0 auto;
+  }
+
+  .processo-lista::before {
+    content: "";
+    position: absolute;
+    left: 18px;
+    top: 15px;
+    bottom: 15px;
+    width: 1px;
+    background: #d4cec3;
+  }
+
+  .processo-etapa {
+    position: relative;
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    gap: 25px;
+    margin-bottom: 55px;
+  }
+
+  .processo-etapa:last-child {
+    margin-bottom: 0;
+  }
+
+  .processo-numero {
+    position: relative;
+    z-index: 2;
+    width: 37px;
+    height: 37px;
+    border: 1px solid #b18a4a;
+    border-radius: 50%;
+    background: #f4f1eb;
+    color: #9b7a3d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .processo-etapa-titulo {
+    margin: 2px 0 12px;
+    font-size: 1.35rem;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+
+  .processo-etapa-texto {
+    margin: 0;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  @media (min-width: 800px) {
+
+    .processo {
+      padding: 150px 60px;
+    }
+
+    .processo-topo {
+      margin-bottom: 100px;
+    }
+
+    .processo-introducao {
+      font-size: 1.1rem;
+    }
+
+    .processo-etapa {
+      grid-template-columns: 48px 1fr;
+      gap: 30px;
+      margin-bottom: 65px;
+    }
+
+    .processo-lista::before {
+      left: 23px;
+    }
+
+    .processo-numero {
+      width: 47px;
+      height: 47px;
+    }
+
+    .processo-etapa-titulo {
+      font-size: 1.55rem;
+    }
+
+    .processo-etapa-texto {
+      font-size: 1.05rem;
+    }
+
+  }
+</style>
+
+<section class="processo" id="como-funciona">
+
+  <div class="processo-conteudo">
+
+    <div class="processo-topo">
+
+      <span class="processo-rotulo">
+        Como funciona
+      </span>
+
+      <h2 class="processo-titulo">
+        Do primeiro contato ao voo.
+      </h2>
+
+      <p class="processo-introducao">
+        Você não precisa chegar sabendo como tudo funciona.
+        Nós orientamos cada etapa para que você saiba o que esperar
+        antes de chegar à Pedra Bonita.
+      </p>
+
+    </div>
+
+    <div class="processo-lista">
+
+      <div class="processo-etapa">
+
+        <div class="processo-numero">
+          01
+        </div>
+
+        <div>
+          <h3 class="processo-etapa-titulo">
+            Entre em contato
+          </h3>
+
+          <p class="processo-etapa-texto">
+            Você informa pelo WhatsApp os dias em que tem disponibilidade
+            para realizar o voo.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="processo-etapa">
+
+        <div class="processo-numero">
+          02
+        </div>
+
+        <div>
+          <h3 class="processo-etapa-titulo">
+            Encontramos o melhor momento
+          </h3>
+
+          <p class="processo-etapa-texto">
+            A equipe acompanha as condições de tempo e vento e orienta
+            sobre o melhor dia e horário para realizar o voo.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="processo-etapa">
+
+        <div class="processo-numero">
+          03
+        </div>
+
+        <div>
+          <h3 class="processo-etapa-titulo">
+            Encontro e registro
+          </h3>
+
+          <p class="processo-etapa-texto">
+            No dia combinado, você encontra a equipe na sede do
+            Clube São Conrado de Voo Livre e realiza o registro necessário
+            antes de seguir para a Pedra Bonita.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="processo-etapa">
+
+        <div class="processo-numero">
+          04
+        </div>
+
+        <div>
+          <h3 class="processo-etapa-titulo">
+            Preparação para o voo
+          </h3>
+
+          <p class="processo-etapa-texto">
+            O equipamento é preparado e verificado. Antes da decolagem,
+            o piloto-instrutor explica os procedimentos de segurança,
+            a decolagem, o pouso e as orientações que devem ser seguidas.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="processo-etapa">
+
+        <div class="processo-numero">
+          05
+        </div>
+
+        <div>
+          <h3 class="processo-etapa-titulo">
+            Voo e pouso
+          </h3>
+
+          <p class="processo-etapa-texto">
+            Com as condições adequadas, a decolagem é autorizada.
+            O piloto-instrutor acompanha você durante todo o voo,
+            até o pouso na Praia do Pepino.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
     
 </body>
 
