@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Parapente | Voa Rio!</title>
+
+  <meta
+    name="description"
+    content="Conheça o Rio de Janeiro pelo céu em um voo duplo de parapente a partir da Pedra Bonita."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #081014;
+      color: #f5f5f5;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =================================
+       HERO
+    ================================= */
+
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 34px 22px 42px;
+      position: relative;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,0.02) 15%,
+          rgba(0,0,0,0.28) 50%,
+          rgba(0,0,0,0.94) 100%
+        ),
+        #172126;
+    }
+
+    .hero::before {
+      content: "ESPAÇO RESERVADO PARA FOTO DE VOO";
+      position: absolute;
+      inset: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 30px;
+      text-align: center;
+
+      color: rgba(255,255,255,0.30);
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+    }
+
+    .eyebrow {
+      margin-bottom: 18px;
+
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+
+      color: rgba(255,255,255,0.62);
+    }
+
+    .hero h1 {
+      max-width: 650px;
+      margin-bottom: 24px;
+
+      font-size: clamp(46px, 13vw, 78px);
+      line-height: 0.94;
+      letter-spacing: -3px;
+      font-weight: 700;
+    }
+
+    .hero-subtitle {
+      max-width: 440px;
+      margin-bottom: 32px;
+
+      font-size: 18px;
+      line-height: 1.45;
+
+      color: rgba(255,255,255,0.78);
+    }
+
+    .hero-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 54px;
+      padding: 0 25px;
+
+      border: 1px solid rgba(255,255,255,0.65);
+      border-radius: 100px;
+
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+
+      transition: 0.25s ease;
+    }
+
+    .hero-button:hover {
+      background: #fff;
+      color: #000;
+    }
+
+
+    /* =================================
+       INTRO
+    ================================= */
+
+    .intro {
+      padding: 105px 24px 100px;
+
+      background: #edf1ef;
+      color: #101719;
+    }
+
+    .intro-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      margin-bottom: 25px;
+
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+
+      color: #687477;
+    }
+
+    .intro h2 {
+      max-width: 620px;
+      margin-bottom: 38px;
+
+      font-size: clamp(38px, 10vw, 64px);
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .intro-main {
+      max-width: 590px;
+      margin-bottom: 30px;
+
+      font-size: 22px;
+      line-height: 1.45;
+    }
+
+    .intro-highlight {
+      max-width: 540px;
+
+      font-size: 17px;
+      line-height: 1.65;
+
+      color: #536064;
+    }
+
+
+    /* =================================
+       FOTO PRINCIPAL
+    ================================= */
+
+    .photo-section {
+      padding: 24px;
+      background: #081014;
+    }
+
+    .photo-frame {
+      min-height: 78svh;
+
+      display: flex;
+      align-items: flex-end;
+
+      padding: 30px;
+
+      position: relative;
+      overflow: hidden;
+
+      background: #1a252a;
+    }
+
+    .photo-frame::before {
+      content: "ESPAÇO RESERVADO PARA FOTO DE VOO";
+
+      position: absolute;
+      inset: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 30px;
+      text-align: center;
+
+      color: rgba(255,255,255,0.27);
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .photo-text {
+      position: relative;
+      z-index: 2;
+
+      max-width: 540px;
+    }
+
+    .photo-text h2 {
+      margin-bottom: 20px;
+
+      font-size: clamp(40px, 10vw, 64px);
+      line-height: 0.96;
+      letter-spacing: -2.5px;
+    }
+
+    .photo-text p {
+      max-width: 450px;
+
+      font-size: 17px;
+      line-height: 1.55;
+
+      color: rgba(255,255,255,0.72);
+    }
+
+
+    /* =================================
+       EXPERIÊNCIA
+    ================================= */
+
+    .experience {
+      padding: 105px 24px;
+
+      background: #101a1e;
+    }
+
+    .experience-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .experience h2 {
+      max-width: 600px;
+      margin-bottom: 30px;
+
+      font-size: clamp(38px, 10vw, 60px);
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .experience-intro {
+      max-width: 570px;
+      margin-bottom: 65px;
+
+      font-size: 20px;
+      line-height: 1.55;
+
+      color: rgba(255,255,255,0.70);
+    }
+
+    .experience-list {
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .experience-item {
+      padding: 29px 0;
+
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .experience-item span {
+      display: block;
+      margin-bottom: 9px;
+
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      color: rgba(255,255,255,0.38);
+    }
+
+    .experience-item h3 {
+      margin-bottom: 8px;
+
+      font-size: 21px;
+      font-weight: 500;
+    }
+
+    .experience-item p {
+      max-width: 530px;
+
+      font-size: 15px;
+      line-height: 1.6;
+
+      color: rgba(255,255,255,0.58);
+    }
+
+
+    /* =================================
+       DECOLAGEM
+    ================================= */
+
+    .takeoff {
+      padding: 110px 24px;
+
+      background: #edf1ef;
+      color: #101719;
+    }
+
+    .takeoff-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .takeoff h2 {
+      max-width: 630px;
+      margin-bottom: 28px;
+
+      font-size: clamp(40px, 10vw, 62px);
+      line-height: 0.98;
+      letter-spacing: -2px;
+    }
+
+    .takeoff-intro {
+      max-width: 570px;
+      margin-bottom: 70px;
+
+      font-size: 19px;
+      line-height: 1.55;
+
+      color: #566165;
+    }
+
+    .steps {
+      border-top: 1px solid #cbd2d0;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 20px;
+
+      padding: 30px 0;
+
+      border-bottom: 1px solid #cbd2d0;
+    }
+
+    .step-number {
+      padding-top: 4px;
+
+      font-size: 12px;
+
+      color: #7c8789;
+    }
+
+    .step h3 {
+      margin-bottom: 7px;
+
+      font-size: 21px;
+      font-weight: 600;
+    }
+
+    .step p {
+      max-width: 500px;
+
+      font-size: 15px;
+      line-height: 1.55;
+
+      color: #626d70;
+    }
+
+
+    /* =================================
+       TELAS MAIORES
+    ================================= */
+
+    @media (min-width: 700px) {
+
+      .hero {
+        padding-left: 7vw;
+        padding-right: 7vw;
+      }
+
+      .intro,
+      .experience,
+      .takeoff {
+        padding-left: 7vw;
+        padding-right: 7vw;
+      }
+
+      .photo-section {
+        padding: 40px;
+      }
+
+      .photo-frame {
+        min-height: 82vh;
+        padding: 55px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+
+  <!-- =================================
+       HERO
+  ================================= -->
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        Voa Rio! · Parapente
+      </div>
+
+      <h1>
+        O céu fica diferente quando você está nele.
+      </h1>
+
+      <p class="hero-subtitle">
+        Talvez seja hora de conhecer o Rio
+        de uma perspectiva que você ainda não viu.
+      </p>
+
+      <a
+        href="#experiencia"
+        class="hero-button"
+      >
+        QUERO CONHECER O VOO
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- =================================
+       INTRO
+  ================================= -->
+
+  <section
+    class="intro"
+    id="experiencia"
+  >
+
+    <div class="intro-inner">
+
+      <div class="section-label">
+        Parapente
+      </div>
+
+      <h2>
+        O Rio aberto diante de você.
+      </h2>
+
+      <p class="intro-main">
+        Você vai voar de parapente.
+      </p>
+
+      <p class="intro-highlight">
+        Uma vela de voo, você acompanhado por um piloto
+        e o céu se abrindo à sua frente.
+        O resto é Rio de Janeiro.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =================================
+       FOTO
+  ================================= -->
+
+  <section class="photo-section">
+
+    <div class="photo-frame">
+
+      <div class="photo-text">
+
+        <h2>
+          De repente, tudo cabe na mesma paisagem.
+        </h2>
+
+        <p>
+          Pedra Bonita, montanhas, mar, cidade e céu.
+          O Rio aparece inteiro em um só olhar.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =================================
+       EXPERIÊNCIA
+  ================================= -->
+
+  <section class="experience">
+
+    <div class="experience-inner">
+
+      <div class="section-label">
+        O voo
+      </div>
+
+      <h2>
+        Você chega.
+        O piloto cuida do resto.
+      </h2>
+
+      <p class="experience-intro">
+        Não precisa saber voar.
+        O piloto conduz o voo e orienta você
+        durante cada etapa da experiência.
+      </p>
+
+      <div class="experience-list">
+
+
+        <div class="experience-item">
+
+          <span>01</span>
+
+          <h3>
+            O parapente é preparado.
+          </h3>
+
+          <p>
+            O equipamento é montado e conferido
+            antes da decolagem.
+          </p>
+
+        </div>
+
+
+        <div class="experience-item">
+
+          <span>02</span>
+
+          <h3>
+            Você recebe a orientação.
+          </h3>
+
+          <p>
+            O piloto explica o que você precisa
+            fazer para a decolagem.
+          </p>
+
+        </div>
+
+
+        <div class="experience-item">
+
+          <span>03</span>
+
+          <h3>
+            Alguns passos.
+          </h3>
+
+          <p>
+            Você acompanha o movimento orientado
+            pelo piloto e o voo começa.
+          </p>
+
+        </div>
+
+
+        <div class="experience-item">
+
+          <span>04</span>
+
+          <h3>
+            O céu se abre.
+          </h3>
+
+          <p>
+            E o Rio de Janeiro passa a aparecer
+            de um lugar completamente diferente.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =================================
+       DECOLAGEM
+  ================================= -->
+
+  <section class="takeoff">
+
+    <div class="takeoff-inner">
+
+      <div class="section-label">
+        Pedra Bonita
+      </div>
+
+      <h2>
+        Tudo começa
+        com alguns passos.
+      </h2>
+
+      <p class="takeoff-intro">
+        Antes da decolagem, o piloto prepara o equipamento
+        e orienta você sobre o movimento que será realizado.
+        Quando estiver tudo certo, é só acompanhar suas instruções.
+      </p>
+
+      <div class="steps">
+
+
+        <div class="step">
+
+          <div class="step-number">
+            01
+          </div>
+
+          <div>
+
+            <h3>
+              Preparação
+            </h3>
+
+            <p>
+              O equipamento é montado
+              e conferido para o voo.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            02
+          </div>
+
+          <div>
+
+            <h3>
+              Orientação
+            </h3>
+
+            <p>
+              O piloto explica o que você
+              precisa fazer na decolagem.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            03
+          </div>
+
+          <div>
+
+            <h3>
+              Alguns passos
+            </h3>
+
+            <p>
+              Você acompanha o movimento
+              orientado pelo piloto.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            04
+          </div>
+
+          <div>
+
+            <h3>
+              O voo
+            </h3>
+
+            <p>
+              E o Rio aparece diante de você
+              por uma nova perspectiva.
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+    <!-- =================================
+       UM LUGAR PARA VIVER
+  ================================= -->
+
+  <section class="place">
+
+    <div class="place-inner">
+
+      <div class="section-label">
+        Pedra Bonita
+      </div>
+
+      <h2>
+        Antes do céu,
+        existe o lugar.
+      </h2>
+
+      <p class="place-text">
+        Pedra Bonita não é apenas o ponto de partida.
+        É parte da paisagem que faz o voo acontecer.
+      </p>
+
+      <div class="place-image">
+
+        <span>
+          ESPAÇO RESERVADO PARA FOTO DA PEDRA BONITA
+        </span>
+
+      </div>
+
+      <div class="place-caption">
+        O Rio de Janeiro visto de um lugar
+        que já faz parte da história do voo livre.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =================================
+       EM DUPLA
+  ================================= -->
+
+  <section class="together">
+
+    <div class="together-inner">
+
+      <div class="section-label">
+        Voo duplo
+      </div>
+
+      <h2>
+        Duas pessoas.
+        Um mesmo céu.
+      </h2>
+
+      <p class="together-intro">
+        Você voa acompanhado por um piloto,
+        compartilhando a experiência e a paisagem
+        do começo ao fim.
+      </p>
+
+      <div class="together-visual">
+
+        <div class="together-placeholder">
+          ESPAÇO RESERVADO PARA FOTO DO VOO
+        </div>
+
+        <div class="together-line">
+          Você não precisa saber voar.
+          O piloto cuida do voo. Você aproveita a paisagem.
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =================================
+       O RIO MUDA
+  ================================= -->
+
+  <section class="changing-rio">
+
+    <div class="changing-rio-inner">
+
+      <div class="section-label">
+        Rio de Janeiro
+      </div>
+
+      <h2>
+        Você já conhece
+        esse Rio.
+        Só que não assim.
+      </h2>
+
+      <div class="changing-rio-content">
+
+        <p>
+          A cidade que você vê todos os dias
+          ganha outra escala quando a paisagem
+          se abre diante de você.
+        </p>
+
+        <p>
+          Montanhas, mar, bairros e céu
+          passam a fazer parte da mesma cena.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =================================
+       FOTO GRANDE
+  ================================= -->
+
+  <section class="wide-photo">
+
+    <div class="wide-photo-frame">
+
+      <div class="wide-photo-placeholder">
+        ESPAÇO RESERVADO PARA FOTO DE PARAPENTE
+      </div>
+
+      <div class="wide-photo-caption">
+        O Rio de Janeiro, visto de cima.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =================================
+       O RETORNO
+  ================================= -->
+
+  <section class="return">
+
+    <div class="return-inner">
+
+      <div class="section-label">
+        O retorno
+      </div>
+
+      <h2>
+        E então,
+        você volta para o chão.
+      </h2>
+
+      <p>
+        O pouso oficial acontece na Praia do Pepino,
+        onde fica a sede do Clube São Conrado de Voo Livre.
+      </p>
+
+      <div class="return-line">
+
+        <span>
+          Pedra Bonita
+        </span>
+
+        <i></i>
+
+        <span>
+          Praia do Pepino
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =================================
+       FINAL
+  ================================= -->
+
+  <section class="paragliding-final">
+
+    <div class="paragliding-final-inner">
+
+      <div class="section-label">
+        Voa Rio!
+      </div>
+
+      <h2>
+        Você volta para o chão.
+        O Rio continua lá.
+        Só que agora você já viu de cima.
+      </h2>
+
+      <p>
+        Fale com a nossa equipe pelo WhatsApp
+        para saber mais sobre o voo de parapente
+        e encontrar o melhor momento para viver essa experiência.
+      </p>
+
+      <a
+        href="https://wa.me/5521975899356?text=Ol%C3%A1!%20Tenho%20algumas%20d%C3%BAvidas%20sobre%20os%20voos%20do%20Voa%20Rio!%20e%20gostaria%20de%20saber%20mais%20ou%20agendar%20meu%20voo."
+        class="paragliding-final-button"
+        target="_blank"
+      >
+        QUERO SABER MAIS
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =================================
+       RODAPÉ
+  ================================= -->
+
+  <footer class="footer">
+
+    <div class="footer-brand">
+      Voa Rio!
+    </div>
+
+    <p>
+      O Rio aos seus pés. O céu à sua frente.
+    </p>
+
+  </footer>
+
+
+  <!-- =================================
+       WHATSAPP
+  ================================= -->
+
+  <a
+    href="https://wa.me/5521975899356?text=Ol%C3%A1!%20Tenho%20algumas%20d%C3%BAvidas%20sobre%20os%20voos%20do%20Voa%20Rio!%20e%20gostaria%20de%20saber%20mais%20ou%20agendar%20meu%20voo."
+    class="whatsapp-float"
+    target="_blank"
+    aria-label="Falar com a equipe pelo WhatsApp"
+  >
+
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+
+      <path
+        d="M20.52 3.48A11.87 11.87 0 0 0 12.05 0C5.48 0 .13 5.35.13 11.92c0 2.1.55 4.15 1.6 5.96L0 24l6.26-1.64a11.86 11.86 0 0 0 5.79 1.5h.01c6.57 0 11.92-5.35 11.92-11.92 0-3.18-1.24-6.17-3.46-8.46ZM12.06 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.71.97.99-3.61-.23-.37a9.88 9.88 0 1 1 8.35 4.6Zm5.42-7.4c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.96 1.18-.18.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.74-1.64-2.04-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.07-.15-.68-1.64-.93-2.24-.25-.6-.5-.51-.68-.52h-.58c-.2 0-.53.07-.8.38-.28.3-1.05 1.03-1.05 2.51 0 1.48 1.08 2.91 1.23 3.11.15.2 2.12 3.24 5.14 4.54.72.31 1.38.2 1.9.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.07-.13-.27-.2-.56-.35Z"
+      />
+
+    </svg>
+
+    <span>
+      WhatsApp
+    </span>
+
+  </a>
+
+
+  <!-- =================================
+       CSS — PARTE 2
+  ================================= -->
+
+  <style>
+
+    /* =================================
+       UM LUGAR PARA VIVER
+    ================================= */
+
+    .place {
+      padding: 120px 24px;
+      background: #edf1ef;
+      color: #101719;
+    }
+
+    .place-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .place h2 {
+      max-width: 650px;
+      margin-bottom: 30px;
+
+      font-size: clamp(42px, 10vw, 68px);
+      line-height: 0.96;
+      letter-spacing: -3px;
+    }
+
+    .place-text {
+      max-width: 560px;
+      margin-bottom: 55px;
+
+      font-size: 19px;
+      line-height: 1.6;
+
+      color: #596568;
+    }
+
+    .place-image {
+      min-height: 70svh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #dce2df;
+    }
+
+    .place-image span {
+      padding: 30px;
+
+      text-align: center;
+
+      font-size: 10px;
+      letter-spacing: 2px;
+
+      color: #899294;
+    }
+
+    .place-caption {
+      max-width: 520px;
+      margin-top: 20px;
+
+      font-size: 13px;
+      line-height: 1.6;
+
+      color: #737d80;
+    }
+
+
+    /* =================================
+       EM DUPLA
+    ================================= */
+
+    .together {
+      padding: 120px 24px;
+
+      background: #101a1e;
+      color: #f5f5f5;
+    }
+
+    .together-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .together h2 {
+      max-width: 660px;
+      margin-bottom: 30px;
+
+      font-size: clamp(42px, 10vw, 66px);
+      line-height: 0.96;
+      letter-spacing: -3px;
+    }
+
+    .together-intro {
+      max-width: 550px;
+      margin-bottom: 60px;
+
+      font-size: 20px;
+      line-height: 1.6;
+
+      color: rgba(255,255,255,0.66);
+    }
+
+    .together-visual {
+      position: relative;
+
+      min-height: 72svh;
+
+      display: flex;
+      align-items: flex-end;
+
+      padding: 30px;
+
+      background: #1c292e;
+    }
+
+    .together-placeholder {
+      position: absolute;
+      inset: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 30px;
+
+      text-align: center;
+
+      font-size: 10px;
+      letter-spacing: 2px;
+
+      color: rgba(255,255,255,0.25);
+    }
+
+    .together-line {
+      position: relative;
+      z-index: 2;
+
+      max-width: 470px;
+
+      font-size: clamp(24px, 6vw, 36px);
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+
+    /* =================================
+       O RIO MUDA
+    ================================= */
+
+    .changing-rio {
+      padding: 120px 24px;
+
+      background: #f5f6f4;
+      color: #101719;
+    }
+
+    .changing-rio-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .changing-rio h2 {
+      max-width: 680px;
+      margin-bottom: 65px;
+
+      font-size: clamp(44px, 11vw, 72px);
+      line-height: 0.94;
+      letter-spacing: -3.5px;
+    }
+
+    .changing-rio-content {
+      max-width: 560px;
+      margin-left: auto;
+    }
+
+    .changing-rio-content p {
+      margin-bottom: 28px;
+
+      font-size: 19px;
+      line-height: 1.65;
+
+      color: #596568;
+    }
+
+    .changing-rio-content p:last-child {
+      margin-bottom: 0;
+    }
+
+
+    /* =================================
+       FOTO GRANDE
+    ================================= */
+
+    .wide-photo {
+      padding: 24px;
+
+      background: #081014;
+    }
+
+    .wide-photo-frame {
+      min-height: 82svh;
+
+      display: flex;
+      align-items: flex-end;
+
+      position: relative;
+      overflow: hidden;
+
+      padding: 30px;
+
+      background: #1a252a;
+    }
+
+    .wide-photo-placeholder {
+      position: absolute;
+      inset: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 30px;
+
+      text-align: center;
+
+      font-size: 10px;
+      letter-spacing: 2px;
+
+      color: rgba(255,255,255,0.23);
+    }
+
+    .wide-photo-caption {
+      position: relative;
+      z-index: 2;
+
+      font-size: 13px;
+
+      color: rgba(255,255,255,0.58);
+    }
+
+
+    /* =================================
+       O RETORNO
+    ================================= */
+
+    .return {
+      padding: 120px 24px;
+
+      background: #edf1ef;
+      color: #101719;
+    }
+
+    .return-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .return h2 {
+      max-width: 640px;
+      margin-bottom: 32px;
+
+      font-size: clamp(44px, 10vw, 68px);
+      line-height: 0.96;
+      letter-spacing: -3px;
+    }
+
+    .return p {
+      max-width: 520px;
+      margin-bottom: 70px;
+
+      font-size: 19px;
+      line-height: 1.6;
+
+      color: #596568;
+    }
+
+    .return-line {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      max-width: 500px;
+    }
+
+    .return-line span {
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      color: #667174;
+    }
+
+    .return-line i {
+      flex: 1;
+
+      height: 1px;
+
+      background: #bcc5c2;
+    }
+
+
+    /* =================================
+       FINAL
+    ================================= */
+
+    .paragliding-final {
+      padding: 130px 24px;
+
+      background: #081014;
+      color: #f5f5f5;
+
+      text-align: center;
+    }
+
+    .paragliding-final-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .paragliding-final .section-label {
+      color: rgba(255,255,255,0.40);
+    }
+
+    .paragliding-final h2 {
+      max-width: 670px;
+      margin: 0 auto 32px;
+
+      font-size: clamp(44px, 11vw, 72px);
+      line-height: 0.94;
+      letter-spacing: -3.5px;
+    }
+
+    .paragliding-final p {
+      max-width: 530px;
+      margin: 0 auto 38px;
+
+      font-size: 18px;
+      line-height: 1.6;
+
+      color: rgba(255,255,255,0.63);
+    }
+
+    .paragliding-final-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 56px;
+      padding: 0 28px;
+
+      border: 1px solid rgba(255,255,255,0.62);
+      border-radius: 100px;
+
+      color: #f5f5f5 !important;
+      text-decoration: none !important;
+
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+
+      transition: 0.25s ease;
+    }
+
+    .paragliding-final-button:link,
+    .paragliding-final-button:visited,
+    .paragliding-final-button:active {
+      color: #f5f5f5 !important;
+      text-decoration: none !important;
+    }
+
+    .paragliding-final-button:hover {
+      background: #fff;
+      color: #081014 !important;
+    }
+
+
+    /* =================================
+       RODAPÉ
+    ================================= */
+
+    .footer {
+      padding: 50px 24px 90px;
+
+      background: #05090b;
+      color: #f5f5f5;
+
+      text-align: center;
+    }
+
+    .footer-brand {
+      margin-bottom: 8px;
+
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .footer p {
+      font-size: 12px;
+
+      color: rgba(255,255,255,0.42);
+    }
+
+
+    /* =================================
+       WHATSAPP
+    ================================= */
+
+    .whatsapp-float {
+      position: fixed;
+
+      right: 18px;
+      bottom: 18px;
+
+      z-index: 100;
+
+      display: flex;
+      align-items: center;
+      gap: 9px;
+
+      min-height: 48px;
+      padding: 0 17px;
+
+      border-radius: 100px;
+
+      background: #f5f5f5;
+      color: #101719;
+
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      transition: 0.25s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-2px);
+    }
+
+    .whatsapp-float svg {
+      width: 18px;
+      height: 18px;
+
+      fill: currentColor;
+    }
+
+
+    /* =================================
+       TELAS MAIORES
+    ================================= */
+
+    @media (min-width: 700px) {
+
+      .place,
+      .together,
+      .changing-rio,
+      .return,
+      .paragliding-final {
+        padding-left: 7vw;
+        padding-right: 7vw;
+      }
+
+      .wide-photo {
+        padding: 40px;
+      }
+
+      .wide-photo-frame {
+        padding: 55px;
+      }
+
+      .footer {
+        padding-left: 7vw;
+        padding-right: 7vw;
+      }
+
+    }
+
+  </style>
+
+</body>
+</html>
