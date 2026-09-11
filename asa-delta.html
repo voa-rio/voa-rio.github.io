@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Asa-delta | Voa Rio!</title>
+
+  <meta
+    name="description"
+    content="Conheça o Rio de Janeiro pelo céu. Uma experiência de voo duplo de asa-delta a partir da Pedra Bonita."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #080808;
+      color: #f5f5f5;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 34px 22px 42px;
+      position: relative;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,0.05) 20%,
+          rgba(0,0,0,0.35) 55%,
+          rgba(0,0,0,0.95) 100%
+        ),
+        #161616;
+    }
+
+    .hero::before {
+      content: "ESPAÇO RESERVADO PARA FOTO DE VOO";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+
+      color: rgba(255,255,255,0.35);
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+    }
+
+    .eyebrow {
+      margin-bottom: 18px;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.62);
+    }
+
+    .hero h1 {
+      font-size: clamp(44px, 13vw, 76px);
+      line-height: 0.95;
+      letter-spacing: -2.5px;
+      font-weight: 700;
+      max-width: 650px;
+      margin-bottom: 24px;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      line-height: 1.45;
+      color: rgba(255,255,255,0.78);
+      max-width: 430px;
+      margin-bottom: 32px;
+    }
+
+    .hero-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 54px;
+      padding: 0 25px;
+
+      border: 1px solid rgba(255,255,255,0.65);
+      border-radius: 100px;
+
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+
+      transition: 0.25s ease;
+    }
+
+    .hero-button:hover {
+      background: #fff;
+      color: #000;
+    }
+
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+      padding: 105px 24px 100px;
+      background: #f2f0eb;
+      color: #111;
+    }
+
+    .intro-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #777;
+      margin-bottom: 25px;
+    }
+
+    .intro h2 {
+      font-size: clamp(38px, 10vw, 64px);
+      line-height: 1;
+      letter-spacing: -2px;
+      margin-bottom: 38px;
+      max-width: 600px;
+    }
+
+    .intro-main {
+      font-size: 22px;
+      line-height: 1.45;
+      max-width: 590px;
+      margin-bottom: 32px;
+    }
+
+    .intro-highlight {
+      font-size: 17px;
+      line-height: 1.6;
+      color: #555;
+      max-width: 520px;
+    }
+
+
+    /* =========================
+       FOTO / DESEJO
+    ========================= */
+
+    .photo-section {
+      background: #0c0c0c;
+      padding: 24px;
+    }
+
+    .photo-frame {
+      min-height: 75svh;
+
+      display: flex;
+      align-items: flex-end;
+
+      padding: 30px;
+
+      position: relative;
+      overflow: hidden;
+
+      background: #1a1a1a;
+    }
+
+    .photo-frame::before {
+      content: "ESPAÇO RESERVADO PARA FOTO DE VOO";
+
+      position: absolute;
+      inset: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      color: rgba(255,255,255,0.28);
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .photo-text {
+      position: relative;
+      z-index: 2;
+      max-width: 520px;
+    }
+
+    .photo-text h2 {
+      font-size: clamp(38px, 10vw, 62px);
+      line-height: 0.98;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+    }
+
+    .photo-text p {
+      font-size: 17px;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.72);
+      max-width: 450px;
+    }
+
+
+    /* =========================
+       EXPERIÊNCIA
+    ========================= */
+
+    .experience {
+      background: #111;
+      padding: 105px 24px;
+    }
+
+    .experience-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .experience h2 {
+      font-size: clamp(38px, 10vw, 60px);
+      line-height: 1;
+      letter-spacing: -2px;
+      margin-bottom: 30px;
+    }
+
+    .experience-intro {
+      font-size: 20px;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.72);
+      max-width: 570px;
+      margin-bottom: 65px;
+    }
+
+    .experience-list {
+      border-top: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .experience-item {
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .experience-item span {
+      display: block;
+      margin-bottom: 9px;
+
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      color: rgba(255,255,255,0.4);
+    }
+
+    .experience-item h3 {
+      font-size: 21px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .experience-item p {
+      font-size: 15px;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.58);
+      max-width: 530px;
+    }
+
+
+    /* =========================
+       DECOLAGEM
+    ========================= */
+
+    .takeoff {
+      background: #f2f0eb;
+      color: #111;
+      padding: 110px 24px;
+    }
+
+    .takeoff-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .takeoff h2 {
+      font-size: clamp(40px, 10vw, 62px);
+      line-height: 0.98;
+      letter-spacing: -2px;
+      margin-bottom: 28px;
+      max-width: 620px;
+    }
+
+    .takeoff-intro {
+      font-size: 19px;
+      line-height: 1.55;
+      color: #555;
+      max-width: 570px;
+      margin-bottom: 70px;
+    }
+
+    .steps {
+      border-top: 1px solid #cfcfcf;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 20px;
+
+      padding: 30px 0;
+
+      border-bottom: 1px solid #cfcfcf;
+    }
+
+    .step-number {
+      font-size: 12px;
+      color: #888;
+      padding-top: 4px;
+    }
+
+    .step h3 {
+      font-size: 21px;
+      margin-bottom: 7px;
+      font-weight: 600;
+    }
+
+    .step p {
+      font-size: 15px;
+      line-height: 1.55;
+      color: #666;
+      max-width: 500px;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (min-width: 700px) {
+
+      .hero {
+        padding-left: 7vw;
+        padding-right: 7vw;
+      }
+
+      .intro,
+      .experience,
+      .takeoff {
+        padding-left: 7vw;
+        padding-right: 7vw;
+      }
+
+      .photo-section {
+        padding: 40px;
+      }
+
+      .photo-frame {
+        min-height: 82vh;
+        padding: 55px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        Voa Rio! · Asa-delta
+      </div>
+
+      <h1>
+        O Rio não foi feito para ser visto só do chão.
+      </h1>
+
+      <p class="hero-subtitle">
+        Talvez esteja na hora de conhecer o Rio de outro jeito.
+      </p>
+
+      <a href="#experiencia" class="hero-button">
+        QUERO CONHECER O VOO
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       INTRO
+  ========================= -->
+
+  <section class="intro" id="experiencia">
+
+    <div class="intro-inner">
+
+      <div class="section-label">
+        Asa-delta
+      </div>
+
+      <h2>
+        Imagine o Rio inteiro diante de você.
+      </h2>
+
+      <p class="intro-main">
+        Você vai voar de asa-delta.
+      </p>
+
+      <p class="intro-highlight">
+        Uma aeronave leve, uma asa acima de você
+        e um piloto conduzindo o voo.
+        O resto é Rio de Janeiro.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOTO
+  ========================= -->
+
+  <section class="photo-section">
+
+    <div class="photo-frame">
+
+      <div class="photo-text">
+
+        <h2>
+          O chão continua lá.
+        </h2>
+
+        <p>
+          Mas o Rio muda completamente
+          quando você passa a vê-lo do céu.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       EXPERIÊNCIA
+  ========================= -->
+
+  <section class="experience">
+
+    <div class="experience-inner">
+
+      <div class="section-label">
+        O voo
+      </div>
+
+      <h2>
+        É mais simples
+        do que parece.
+      </h2>
+
+      <p class="experience-intro">
+        Você não precisa saber voar.
+        O piloto conduz o voo e orienta você
+        durante cada etapa.
+      </p>
+
+      <div class="experience-list">
+
+        <div class="experience-item">
+
+          <span>
+            01
+          </span>
+
+          <h3>
+            A asa pronta.
+          </h3>
+
+          <p>
+            O equipamento é preparado e conferido
+            antes do voo.
+          </p>
+
+        </div>
+
+
+        <div class="experience-item">
+
+          <span>
+            02
+          </span>
+
+          <h3>
+            Você recebe a orientação.
+          </h3>
+
+          <p>
+            Antes da decolagem, o piloto explica
+            o que você precisa fazer.
+          </p>
+
+        </div>
+
+
+        <div class="experience-item">
+
+          <span>
+            03
+          </span>
+
+          <h3>
+            Alguns passos.
+          </h3>
+
+          <p>
+            A asa ganha velocidade
+            e o voo começa.
+          </p>
+
+        </div>
+
+
+        <div class="experience-item">
+
+          <span>
+            04
+          </span>
+
+          <h3>
+            O Rio à sua frente.
+          </h3>
+
+          <p>
+            A partir dali, é hora de simplesmente
+            viver a experiência.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       DECOLAGEM
+  ========================= -->
+
+  <section class="takeoff">
+
+    <div class="takeoff-inner">
+
+      <div class="section-label">
+        Pedra Bonita
+      </div>
+
+      <h2>
+        Tudo começa
+        alguns passos antes.
+      </h2>
+
+      <p class="takeoff-intro">
+        No momento da decolagem, você estará acompanhado
+        pelo piloto e seguirá suas orientações.
+        Quando estiver tudo certo, é só seguir o movimento.
+      </p>
+
+      <div class="steps">
+
+        <div class="step">
+
+          <div class="step-number">
+            01
+          </div>
+
+          <div>
+            <h3>
+              Preparação
+            </h3>
+
+            <p>
+              Equipamento pronto e conferido
+              para o voo.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            02
+          </div>
+
+          <div>
+            <h3>
+              Orientação
+            </h3>
+
+            <p>
+              O piloto explica o que você precisa
+              fazer na decolagem.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            03
+          </div>
+
+          <div>
+            <h3>
+              Alguns passos
+            </h3>
+
+            <p>
+              A asa ganha velocidade
+              e o voo começa.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            04
+          </div>
+
+          <div>
+            <h3>
+              O voo
+            </h3>
+
+            <p>
+              E o Rio de Janeiro aparece
+              de um lugar completamente diferente.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- O RIO -->
+  <section class="rio-section">
+
+    <div class="rio-inner">
+
+      <div class="rio-label">
+        O Rio
+      </div>
+
+      <h2>
+        A cidade muda de tamanho.
+      </h2>
+
+      <p class="rio-intro">
+        Montanhas, mar, cidade e céu passam a fazer parte
+        da mesma paisagem.
+      </p>
+
+    </div>
+
+    <div class="rio-photo">
+
+      <div class="rio-photo-placeholder">
+        ESPAÇO RESERVADO PARA FOTO DE VOO
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- VÍDEO -->
+  <section class="video-section">
+
+    <div class="video-inner">
+
+      <div class="video-label">
+        Um voo de verdade
+      </div>
+
+      <h2>
+        Não precisa imaginar. Veja.
+      </h2>
+
+      <p class="video-intro">
+        Veja a experiência de voar de asa-delta e o Rio de Janeiro
+        a partir do céu.
+      </p>
+
+      <div class="video-placeholder">
+        <span>
+          ESPAÇO RESERVADO PARA O VÍDEO
+        </span>
+      </div>
+
+      <div class="video-note">
+        Espaço reservado para o vídeo do voo.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONDIÇÕES -->
+  <section class="conditions-section">
+
+    <div class="conditions-inner">
+
+      <div class="conditions-label">
+        O céu também participa
+      </div>
+
+      <h2>
+        Cada voo acontece quando
+        as condições estão certas.
+      </h2>
+
+      <p class="conditions-main">
+        O clima e o vento são acompanhados para encontrar
+        o melhor momento para voar.
+      </p>
+
+      <p class="conditions-text">
+        Se as condições não estiverem adequadas, a
+        decolagem não é autorizada. Nesse caso, o voo pode
+        ser remarcado.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ANTES DE VOAR -->
+  <section class="before-section">
+
+    <div class="before-inner">
+
+      <div class="before-label">
+        Antes de voar
+      </div>
+
+      <h2>
+        Você só precisa
+        chegar até aqui.
+      </h2>
+
+      <div class="before-list">
+
+        <div class="before-item">
+
+          <h3>
+            Nunca voou?
+          </h3>
+
+          <p>
+            Não tem problema. O piloto orienta você
+            antes da decolagem e durante cada etapa
+            necessária para o voo.
+          </p>
+
+        </div>
+
+
+        <div class="before-item">
+
+          <h3>
+            O que vestir?
+          </h3>
+
+          <p>
+            Dê preferência a roupas confortáveis
+            e calçados fechados.
+          </p>
+
+        </div>
+
+
+        <div class="before-item">
+
+          <h3>
+            E seus objetos?
+          </h3>
+
+          <p>
+            Pequenos objetos pessoais podem ser
+            acomodados junto ao equipamento.
+          </p>
+
+        </div>
+
+
+        <div class="before-item">
+
+          <h3>
+            Tem idade mínima?
+          </h3>
+
+          <p>
+            O voo é realizado para maiores de 18 anos.
+            Menores a partir de 14 anos podem voar
+            acompanhados pelo responsável legal.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONVITE FINAL -->
+  <section class="final-section">
+
+    <div class="final-inner">
+
+      <div class="final-label">
+        Voa Rio!
+      </div>
+
+      <h2>
+        Talvez seja hora
+        de ver o Rio assim.
+      </h2>
+
+      <p class="final-text">
+        Pedra Bonita. A asa pronta.
+        O Rio à frente.
+      </p>
+
+      <a
+        href="https://wa.me/5521975899356?text=Ol%C3%A1!%20Tenho%20algumas%20d%C3%BAvidas%20sobre%20os%20voos%20do%20Voa%20Rio!%20e%20gostaria%20de%20saber%20mais%20ou%20agendar%20meu%20voo."
+        class="final-button"
+      >
+        QUERO CONHECER O VOO
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+
+    <div class="footer-brand">
+      Voa Rio!
+    </div>
+
+    <div class="footer-slogan">
+      O Rio aos seus pés. O céu à sua frente.
+    </div>
+
+  </footer>
+
+
+  <!-- WHATSAPP -->
+  <a
+    href="https://wa.me/5521975899356?text=Ol%C3%A1!%20Tenho%20algumas%20d%C3%BAvidas%20sobre%20os%20voos%20do%20Voa%20Rio!%20e%20gostaria%20de%20saber%20mais%20ou%20agendar%20meu%20voo."
+    class="whatsapp-float"
+    aria-label="Fale com a equipe do Voa Rio!"
+  >
+
+    <svg
+      viewBox="0 0 32 32"
+      aria-hidden="true"
+    >
+      <path
+        d="M16 3C8.82 3 3 8.82 3 16c0 2.29.6 4.44 1.74 6.31L3 29l6.88-1.7A12.94 12.94 0 0 0 16 29c7.18 0 13-5.82 13-13S23.18 3 16 3Zm0 23.7c-1.92 0-3.8-.51-5.44-1.47l-.39-.23-4.08 1.01 1.03-3.98-.25-.41A10.75 10.75 0 1 1 16 26.7Zm5.89-7.99c-.32-.16-1.89-.93-2.18-1.04-.29-.11-.5-.16-.71.16-.21.32-.81 1.04-.99 1.25-.18.21-.36.24-.68.08-.32-.16-1.35-.5-2.58-1.59-.95-.85-1.59-1.9-1.77-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.36.47-.53.16-.18.21-.3.32-.51.11-.21.05-.39-.03-.55-.08-.16-.71-1.72-.97-2.36-.26-.63-.52-.55-.71-.56h-.61c-.21 0-.55.08-.84.39-.29.32-1.1 1.07-1.1 2.61s1.13 3.03 1.29 3.24c.16.21 2.22 3.39 5.38 4.75.75.32 1.33.51 1.79.65.75.24 1.43.2 1.97.12.6-.09 1.89-.77 2.16-1.51.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"
+      />
+    </svg>
+
+    <span>
+      Fale com a gente
+    </span>
+
+  </a>
+
+
+  <style>
+
+    /* =========================
+       O RIO
+    ========================= */
+
+    .rio-section {
+      background: #080808;
+      color: #f5f5f5;
+      padding: 115px 24px 24px;
+    }
+
+    .rio-inner {
+      max-width: 720px;
+      margin: 0 auto 55px;
+    }
+
+    .rio-label,
+    .video-label,
+    .conditions-label,
+    .before-label,
+    .final-label {
+      margin-bottom: 24px;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .rio-label,
+    .video-label,
+    .conditions-label,
+    .before-label,
+    .final-label {
+      color: rgba(255,255,255,0.55);
+    }
+
+    .rio-section h2 {
+      max-width: 650px;
+      margin-bottom: 28px;
+      font-size: clamp(42px, 11vw, 70px);
+      line-height: 0.98;
+      letter-spacing: -2.5px;
+      font-weight: 700;
+      color: #f5f5f5;
+    }
+
+    .rio-intro {
+      max-width: 560px;
+      font-size: 20px;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .rio-photo {
+      max-width: 1100px;
+      min-height: 78svh;
+      margin: 0 auto;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #151515;
+    }
+
+    .rio-photo-placeholder {
+      color: rgba(255,255,255,0.25);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+
+
+    /* =========================
+       VÍDEO
+    ========================= */
+
+    .video-section {
+      padding: 115px 24px;
+      background: #f2f0eb;
+      color: #111;
+    }
+
+    .video-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .video-label {
+      color: #777;
+    }
+
+    .video-section h2 {
+      max-width: 680px;
+      margin-bottom: 28px;
+      font-size: clamp(42px, 11vw, 68px);
+      line-height: 0.98;
+      letter-spacing: -2.5px;
+      color: #111;
+    }
+
+    .video-intro {
+      max-width: 600px;
+      margin-bottom: 55px;
+      font-size: 19px;
+      line-height: 1.55;
+      color: #555;
+    }
+
+    .video-placeholder {
+      min-height: 62svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      background: #151515;
+      color: rgba(255,255,255,0.35);
+      text-align: center;
+    }
+
+    .video-placeholder span {
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .video-note {
+      padding-top: 16px;
+      font-size: 12px;
+      color: #777;
+    }
+
+
+    /* =========================
+       CONDIÇÕES
+    ========================= */
+
+    .conditions-section {
+      background: #111;
+      color: #f5f5f5;
+      padding: 115px 24px;
+    }
+
+    .conditions-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .conditions-label {
+      color: rgba(255,255,255,0.5);
+    }
+
+    .conditions-section h2 {
+      max-width: 690px;
+      margin-bottom: 42px;
+      font-size: clamp(40px, 10vw, 64px);
+      line-height: 1;
+      letter-spacing: -2px;
+      color: #f5f5f5;
+    }
+
+    .conditions-main,
+    .conditions-text {
+      max-width: 600px;
+      font-size: 18px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .conditions-text {
+      margin-top: 28px;
+    }
+
+
+    /* =========================
+       ANTES DE VOAR
+    ========================= */
+
+    .before-section {
+      padding: 115px 24px;
+      background: #f2f0eb;
+      color: #111;
+    }
+
+    .before-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .before-label {
+      color: #777;
+    }
+
+    .before-section h2 {
+      max-width: 620px;
+      margin-bottom: 65px;
+      font-size: clamp(42px, 10vw, 64px);
+      line-height: 0.98;
+      letter-spacing: -2px;
+      color: #111;
+    }
+
+    .before-list {
+      border-top: 1px solid #ccc;
+    }
+
+    .before-item {
+      padding: 30px 0;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .before-item h3 {
+      margin-bottom: 9px;
+      font-size: 21px;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .before-item p {
+      max-width: 570px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #666;
+    }
+
+
+    /* =========================
+       CONVITE FINAL
+    ========================= */
+
+    .final-section {
+      padding: 135px 24px;
+      background: #080808;
+      color: #f5f5f5;
+      text-align: center;
+    }
+
+    .final-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .final-label {
+      color: rgba(255,255,255,0.45);
+    }
+
+    .final-section h2 {
+      max-width: 680px;
+      margin: 0 auto 30px;
+      font-size: clamp(44px, 11vw, 72px);
+      line-height: 0.96;
+      letter-spacing: -2.5px;
+      color: #f5f5f5;
+    }
+
+    .final-text {
+      margin-bottom: 42px;
+      font-size: 18px;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.68);
+    }
+
+    .final-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      padding: 0 27px;
+      border: 1px solid rgba(255,255,255,0.65);
+      border-radius: 100px;
+      color: #f5f5f5;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      transition: 0.25s ease;
+    }
+
+    .final-button:hover {
+      background: #fff;
+      color: #000;
+    }
+
+
+    /* =========================
+       RODAPÉ
+    ========================= */
+
+    .site-footer {
+      padding: 70px 24px 110px;
+      background: #000;
+      color: #f5f5f5;
+      text-align: center;
+    }
+
+    .footer-brand {
+      margin-bottom: 12px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .footer-slogan {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+    }
+
+
+    /* =========================
+       WHATSAPP
+    ========================= */
+
+    .whatsapp-float {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 1000;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      min-height: 46px;
+      padding: 0 16px;
+
+      background: #fff;
+      color: #111;
+      border-radius: 100px;
+
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+
+      font-size: 12px;
+      text-decoration: none;
+
+      transition: 0.25s ease;
+    }
+
+    .whatsapp-float svg {
+      width: 19px;
+      height: 19px;
+      fill: #111;
+      flex-shrink: 0;
+    }
+
+    .whatsapp-float span {
+      color: #111;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-3px);
+    }
+
+
+    /* =========================
+       DESKTOP
+    ========================= */
+
+    @media (min-width: 700px) {
+
+      .rio-section,
+      .video-section,
+      .conditions-section,
+      .before-section,
+      .final-section {
+        padding-left: 7vw;
+        padding-right: 7vw;
+      }
+
+      .rio-section {
+        padding-top: 150px;
+      }
+
+      .rio-photo {
+        min-height: 85vh;
+      }
+
+      .video-placeholder {
+        min-height: 70vh;
+      }
+
+      .whatsapp-float {
+        right: 28px;
+        bottom: 28px;
+      }
+
+    }
+
+  </style>
+
+
+</body>
+</html>
