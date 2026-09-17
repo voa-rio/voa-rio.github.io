@@ -43,8 +43,46 @@ function trocarIdioma(idioma) {
     }
 }
 
+function ajustarLinksIdioma() {
+    const idiomaAtual = obterIdioma();
+
+    document.querySelectorAll("a[href]").forEach(link => {
+        const destino = link.getAttribute("href");
+
+        if (!destino) {
+            return;
+        }
+
+        if (
+            destino.startsWith("#") ||
+            destino.startsWith("http://") ||
+            destino.startsWith("https://") ||
+            destino.startsWith("mailto:") ||
+            destino.startsWith("tel:")
+        ) {
+            return;
+        }
+
+        if (
+            destino === "index.html" ||
+            destino === "asa-delta.html" ||
+            destino === "parapente.html"
+        ) {
+            if (idiomaAtual === "pt") {
+                link.setAttribute("href", destino);
+            } else {
+                link.setAttribute(
+                    "href",
+                    `${idiomaAtual}/${destino}`
+                );
+            }
+        }
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     atualizarIdiomaAtivo();
+    ajustarLinksIdioma();
 
     document.querySelectorAll("[data-idioma]").forEach(botao => {
         botao.addEventListener("click", () => {
