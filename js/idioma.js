@@ -21,3 +21,9 @@ function atualizarIdiomaAtivo() {
 document.addEventListener("DOMContentLoaded", () => {
     atualizarIdiomaAtivo();
 });
+document.querySelectorAll("[data-idioma]").forEach(botao => {
+    botao.addEventListener("click", () => {
+        salvarIdioma(botao.dataset.idioma);
+        atualizarIdiomaAtivo();
+    });
+});
