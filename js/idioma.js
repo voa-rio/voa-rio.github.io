@@ -18,3 +18,6 @@ function atualizarIdiomaAtivo() {
         );
     });
 }
+document.addEventListener("DOMContentLoaded", () => {
+    atualizarIdiomaAtivo();
+});
